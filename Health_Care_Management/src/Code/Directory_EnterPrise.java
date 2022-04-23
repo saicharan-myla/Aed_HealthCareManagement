@@ -39,7 +39,7 @@ else if (type == EnterPrise.EntType.Supplier){
 
 }
 else if (type == EnterPrise.EntType.Logistics){
- enterprise = new LogisticsEnterPrise(name);
+ enterprise = new TransportEnterPrise(name);
     enterpList.add(enterprise);
 }
 else if (type == EnterPrise.EntType.MedicalEquiPantry){
