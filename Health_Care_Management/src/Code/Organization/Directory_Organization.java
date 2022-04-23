@@ -30,13 +30,13 @@ public class Directory_Organization {
 
         Organization org = null;
         if (OrganizationType.Doctor.getValue().equalsIgnoreCase(t.getValue())) {
-            org = new DoctorOrganization();
+            org = new Organization_Doctor();
             organizations.add(org);
         } else if (OrganizationType.Pharmacy.getValue().equalsIgnoreCase(t.getValue())) {
-            org = new PharmacyOrganization();
+            org = new Organization_Pharmacy();
             organizations.add(org);
         } else if (OrganizationType.Supplier.getValue().equalsIgnoreCase(t.getValue())) {
-            org = new SupplierOrganization();
+            org = new Organization_Supplier();
             organizations.add(org);
         } else if (OrganizationType.MedicalEquipment.getValue().equalsIgnoreCase(t.getValue())) {
             org = new EquipmentHandlingOrganization();
