@@ -10,22 +10,20 @@ import java.util.ArrayList;
  *
  * @author saich
  */
-public class HospitalEnterPrise extends EnterPrise {
+public class TransportEnterPrise extends EnterPrise {
     
+    public TransportEnterPrise(String Name){
 
-public HospitalEnterPrise (String Name){
-
-super(Name,EnterPrise.EntType.Hospital);
-
-
+super(Name, EnterPrise.EntType.Logistics);
 
 }
-//@Override get SupportRole()
+//@Override get SupportedRole()
 public ArrayList<Role> SupportRole(){
+
+
 return null;
 
 }
-
 
 
 
