@@ -10,13 +10,13 @@ package Code;
  */
 public class Network {
 
-   private Directory_Enterprise directoEnterpri;
+   private Directory_EnterPrise directoEnterpri;
    private String Network_Name;
     
   
 
 public Network(){
-  directoEnterpri= new Directory_Employee();
+  directoEnterpri = new Directory_EnterPrise();
 
 }
 
@@ -28,11 +28,11 @@ public Network(){
         this.Network_Name = Network_Name;
     }
 
-    public Directory_Enterprise getDirectoEnterpri() {
+    public Directory_EnterPrise getDirectoEnterpri() {
         return directoEnterpri;
     }
 
-    public void setDirectoEnterpri(Directory_Enterprise directoEnterpri) {
+    public void setDirectoEnterpri(Directory_EnterPrise directoEnterpri) {
         this.directoEnterpri = directoEnterpri;
     }
 
