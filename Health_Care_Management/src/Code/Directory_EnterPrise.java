@@ -34,7 +34,7 @@ enterpList = new ArrayList();
      }
 
 else if (type == EnterPrise.EntType.Supplier){
- enterprise = new SupplierEnterPrise(name);
+ enterprise = new WholesaleEnterPrise(name);
     enterpList.add(enterprise);
 
 }
@@ -43,11 +43,11 @@ else if (type == EnterPrise.EntType.Logistics){
     enterpList.add(enterprise);
 }
 else if (type == EnterPrise.EntType.MedicalEquiPantry){
- enterprise = new MedicalEquiPantryEnterPrise(name);
+ enterprise = new MedicalEquipPantryEnterPrise(name);
     enterpList.add(enterprise);
 }
 else if (type == EnterPrise.EntType.Pharmacy){
- enterprise = new PharmacyEnterPrise(name);
+ enterprise = new DrugEnterprise(name);
     enterpList.add(enterprise);
 }
 
