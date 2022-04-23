@@ -4,10 +4,38 @@
  */
 package Code;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author saich
  */
 public class DrugPantryList {
+
+
+private ArrayList<DrugPantry> ListOfDrugs;
+public DrugPantryList(){
+  ListOfDrugs = new ArrayList();
+
+}
+
+    public ArrayList<DrugPantry> getListOfDrugs() {
+        return ListOfDrugs;
+    }
+
+    public void setListOfDrugs(ArrayList<DrugPantry> ListOfDrugs) {
+        this.ListOfDrugs = ListOfDrugs;
+    }
+ public DrugPantry AddDrug(){
+DrugPantry dp = new DrugPantry();
+ListOfDrugs.add(dp);
+return dp;
+}
+
+public  void removeDrug(DrugPantry dp1){
+
+ListOfDrugs.remove(dp1);
+
+}
     
 }
