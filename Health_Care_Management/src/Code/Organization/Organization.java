@@ -50,7 +50,7 @@ public abstract class Organization {
     }
 
 
-    public abstract ArrayList<Role> getSupportedRole();
+    public abstract ArrayList<Role> getRole();
 
     public UserAccountDirectory getUserAccDir() {
         return userAccDir;
