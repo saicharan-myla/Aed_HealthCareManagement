@@ -5,22 +5,23 @@
 package Code.Role;
 
 import Code.EnterPrise;
+import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
-import javax.swing.JPanel;
 
 /**
  *
  * @author pridh
  */
-public class Role_Admin extends Role {
+public class Role_Supplier extends Role {
+
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
-        return new AdminWorkAreaJPanel(userProcessContainer, enterprise);
+        return new SupplierWorkAreaJPanel(userProcessContainer,business,account,organization);
     }
 
     @Override
     public String toString() {
-        return "Admin Role";
+        return "Support Role";
     }
 }

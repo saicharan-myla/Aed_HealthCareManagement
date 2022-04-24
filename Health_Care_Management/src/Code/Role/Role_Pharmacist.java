@@ -5,22 +5,25 @@
 package Code.Role;
 
 import Code.EnterPrise;
+import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
-import javax.swing.JPanel;
+import Code.Organization.Organization_Pharmacy;
 
 /**
  *
  * @author pridh
  */
-public class Role_Admin extends Role {
+public class Role_Pharmacist extends Role {
+
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
-        return new AdminWorkAreaJPanel(userProcessContainer, enterprise);
+        return new PharmaWorkAreaJPanel(userProcessContainer, account, enterprise, (Organization_Pharmacy)organization,network);
+        //return new PharmaManagementJPanel();
     }
 
     @Override
     public String toString() {
-        return "Admin Role";
+        return "Pharnacist Role";
     }
 }
