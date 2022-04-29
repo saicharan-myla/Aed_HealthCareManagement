@@ -8,7 +8,8 @@ import Code.AccountDirectory;
 import Code.Directory_Employee;
 import Code.Role.Role;
 import java.util.ArrayList;
-
+import Code.Doctor;
+import Code.DocPrescription;
 /**
  *
  * @author pridh
@@ -23,7 +24,7 @@ public abstract class Organization {
     private static int c;
 
     private HealthcareEquipmentWorkRequest eqReq;
-    ArrayList<DoctorPrescription> prescriptions;
+    public ArrayList<DocPrescription> prescriptions;
 
     public enum OrganizationType {
         Admin("Admin Organization"), Doctor("Doctor Organization"), Operations("Operations Organization"),
@@ -47,7 +48,7 @@ public abstract class Organization {
         empDir = new Directory_Employee();
         userAccDir = new AccountDirectory();
         orgId = c;
-        prescriptions = new ArrayList<DoctorPrescription>();
+        prescriptions = new ArrayList<DocPrescription>();
         ++c;
     }
 
