@@ -4,6 +4,8 @@
  */
 package Code.Role;
 
+import Code.Account;
+import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
 import Code.Organization.Organization;
@@ -40,7 +42,7 @@ public abstract class Role {
         }
     }
     
-    public abstract JPanel createWorkArea (JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business, Network network);
+    public abstract JPanel createWorkArea (JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business, Network network);
     @Override
     public String toString(){
         return this.getClass().getName();
