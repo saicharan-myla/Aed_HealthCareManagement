@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author saich
  */
-class DocPrescription {
+public class DocPrescription {
     
 private String Diagnosis;
 private int frequency_day;
