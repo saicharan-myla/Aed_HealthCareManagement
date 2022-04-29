@@ -11,7 +11,7 @@ package UserInterface.Role_Administration;
 public class ManagePanel_Organization extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManagePanel_Organization
+     * Creates new form ManagePanel_Account
      */
     public ManagePanel_Organization() {
         initComponents();
