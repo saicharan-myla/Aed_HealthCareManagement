@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author saich
  */
-class PrescriptionList {
+public class PrescriptionList {
 
 private ArrayList <DocPrescription>  dpresList;
 
