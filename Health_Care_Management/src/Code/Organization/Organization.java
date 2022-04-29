@@ -4,7 +4,9 @@
  */
 package Code.Organization;
 
+import Code.AccountDirectory;
 import Code.Directory_Employee;
+import Code.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +18,7 @@ public abstract class Organization {
     private String orgName;
     private WorkQueue wq;
     private Directory_Employee empDir;
-    private UserAccountDirectory userAccDir;
+    private AccountDirectory userAccDir;
     private int orgId;
     private static int c;
 
@@ -43,7 +45,7 @@ public abstract class Organization {
         this.orgName = orgName;
         wq = new WorkQueue();
         empDir = new Directory_Employee();
-        userAccDir = new UserAccountDirectory();
+        userAccDir = new AccountDirectory();
         orgId = c;
         prescriptions = new ArrayList<DoctorPrescription>();
         ++c;
@@ -52,7 +54,7 @@ public abstract class Organization {
 
     public abstract ArrayList<Role> getRole();
 
-    public UserAccountDirectory getUserAccDir() {
+    public AccountDirectory getUserAccDir() {
         return userAccDir;
     }
 
