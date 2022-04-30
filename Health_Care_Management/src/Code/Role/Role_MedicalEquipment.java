@@ -4,6 +4,8 @@
  */
 package Code.Role;
 
+import Code.Account;
+import Code.EcoSystem;
 import Code.EnterPrise;
 import javax.swing.JPanel;
 import Code.Network;
@@ -16,7 +18,7 @@ import Code.Organization.Organization;
 public class Role_MedicalEquipment extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
+    public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
         return new HealthcareEquipmentWorkAreaJPanel(userProcessContainer, business, account,  organization,network);
     }
 

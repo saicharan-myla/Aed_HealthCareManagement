@@ -4,6 +4,7 @@
  */
 package Code.Role;
 
+import Code.EcoSystem;
 import Code.EnterPrise;
 import javax.swing.JPanel;
 import Code.Network;

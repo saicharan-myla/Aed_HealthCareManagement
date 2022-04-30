@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UI_dOCTOR;
+package UserInterface.Doctor;
 
 import Code.Doctor;
 import Code.EcoSystem;
@@ -118,14 +118,14 @@ network();
     private void Manage_Equipment_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Manage_Equipment_ButtonActionPerformed
         // TODO add your handling code here:
 CardLayout abs = (CardLayout)userContainer.getLayout();
-userContainer.add("PrescriptionJPanel", new UI_dOCTOR.HealthCareEquipmentManagementJpanel(userContainer, ua,org_doc,enter,ecosystem,network));
+userContainer.add("PrescriptionJPanel", new UserInterface.Doctor.HealthCareEquipmentManagementJpanel(userContainer, ua,org_doc,enter,ecosystem,network));
 abs.next(userContainer);
     }//GEN-LAST:event_Manage_Equipment_ButtonActionPerformed
 
     private void Pres_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pres_ButtonActionPerformed
         // TODO add your handling code here:
 CardLayout abs = (CardLayout)userContainer.getLayout();
-userContainer.add("PrescriptionJPanel", new UI_dOCTOR.PrescriptionJPanel(userContainer, ua,org_doc,enter,ecosystem,network));
+userContainer.add("PrescriptionJPanel", new UserInterface.Doctor.PrescriptionJPanel(userContainer, ua,org_doc,enter,ecosystem,network));
 abs.next(userContainer);
     }//GEN-LAST:event_Pres_ButtonActionPerformed
 

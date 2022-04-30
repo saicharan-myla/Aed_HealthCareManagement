@@ -2,19 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Schema.WorkQueue;
+package Code.WorkQueue;
 
-import Schema.UserAccount.UserAccount;
+//import Code.UserAccount.UserAccount;
 
 /**
  *
  * @author sanjana
  */
+import Code.UsrAcc.UsrAccnt;
 import java.util.Date;
 
 public class DoctorWorkRequest {
-    private UserAccount send;
-    private UserAccount receive;
+    private UsrAccnt send;
+    private UsrAccnt receive;
     private String medication_Name;
     private String patient_Name;
     private String hospital_Name;
@@ -22,19 +23,19 @@ public class DoctorWorkRequest {
     private Date request_Date;
     private int Quantity_1;
 
-    public UserAccount getSender() {
+    public UsrAccnt getSender() {
         return send;
     }
 
-    public void setSender(UserAccount sender) {
+    public void setSender(UsrAccnt sender) {
         this.send = sender;
     }
 
-    public UserAccount getReceiver() {
+    public UsrAccnt getReceiver() {
         return receive;
     }
 
-    public void setReceiver(UserAccount receiver) {
+    public void setReceiver(UsrAccnt receiver) {
         this.receive = receiver;
     }
 
