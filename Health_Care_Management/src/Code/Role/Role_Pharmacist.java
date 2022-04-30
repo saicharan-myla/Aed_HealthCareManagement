@@ -4,6 +4,8 @@
  */
 package Code.Role;
 
+import Code.Account;
+import Code.EcoSystem;
 import Code.EnterPrise;
 import javax.swing.JPanel;
 import Code.Network;
@@ -17,7 +19,7 @@ import Code.Organization.Organization_Pharmacy;
 public class Role_Pharmacist extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
+    public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
         return new PharmaWorkAreaJPanel(userProcessContainer, account, enterprise, (Organization_Pharmacy)organization,network);
         //return new PharmaManagementJPanel();
     }
