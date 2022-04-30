@@ -7,7 +7,7 @@ package Code.Design;
 import Code.Organization.Organization_Admin;
 import Code.Product;
 import Code.WorkQueue.HealthcareEquipmentWorkRequest;
-import Schema.WorkQueue.DoctorWorkRequest;
+import Code.WorkQueue.DoctorWorkRequest;
 import Schema.WorkQueue.PharmacyWorkRequest;
 import java.util.Random;
 

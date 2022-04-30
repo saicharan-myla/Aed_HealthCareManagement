@@ -18,7 +18,7 @@ public class ConfigureASystem {
 public static EcoSystem configure(){
 
 
-    EcoSystem eco = EcoSystem.getInstance();
+    EcoSystem eco = EcoSystem.getReferrence();
      Employee employee  = eco.getEmpDir().AddEmployee("NEU");
       UserAccount ua = eco.getUserAccDir().createUserAccount("sps","sps", employee, new Role_SystemAdmin());
 return eco;
