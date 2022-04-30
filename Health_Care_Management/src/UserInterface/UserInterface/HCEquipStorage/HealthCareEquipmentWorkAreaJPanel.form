@@ -21,23 +21,23 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="488" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="refreshBtn" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="BtnRefresh" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" min="-2" pref="909" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="591" max="-2" attributes="0"/>
-                      <Component id="headerLbl" min="-2" pref="648" max="-2" attributes="0"/>
+                      <Component id="MainLbl" min="-2" pref="648" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="459" max="-2" attributes="0"/>
-                      <Component id="backBtn" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="Btnback" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      <Component id="assignBtn" min="-2" pref="167" max="-2" attributes="0"/>
+                      <Component id="BTNAssignment" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="317" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="viewReqBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="processReqBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ViewReqStatusBTn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ProcessRequestBTN" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -49,29 +49,29 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-              <Component id="refreshBtn" min="-2" pref="36" max="-2" attributes="0"/>
+              <Component id="BtnRefresh" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="279" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="processReqBtn" min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="ProcessRequestBTN" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="viewReqBtn" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="backBtn" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="assignBtn" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="ViewReqStatusBTn" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="Btnback" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="BTNAssignment" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="headerLbl" min="-2" pref="113" max="-2" attributes="0"/>
+              <Component id="MainLbl" min="-2" pref="113" max="-2" attributes="0"/>
               <EmptySpace min="353" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="assignBtn">
+    <Component class="javax.swing.JButton" name="BTNAssignment">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -79,10 +79,10 @@
         <Property name="text" type="java.lang.String" value="ASSIGN TO ME"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTNAssignmentActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="backBtn">
+    <Component class="javax.swing.JButton" name="Btnback">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -90,10 +90,10 @@
         <Property name="text" type="java.lang.String" value="&lt;&lt;Back"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnbackActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="processReqBtn">
+    <Component class="javax.swing.JButton" name="ProcessRequestBTN">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -101,10 +101,10 @@
         <Property name="text" type="java.lang.String" value="PROCESS REQUEST&gt;&gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="processReqBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProcessRequestBTNActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="viewReqBtn">
+    <Component class="javax.swing.JButton" name="ViewReqStatusBTn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -112,10 +112,10 @@
         <Property name="text" type="java.lang.String" value="VIEW REQUEST STATUS&gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewReqBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewReqStatusBTnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="refreshBtn">
+    <Component class="javax.swing.JButton" name="BtnRefresh">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -123,7 +123,7 @@
         <Property name="text" type="java.lang.String" value="Refresh"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="headerLbl">
+    <Component class="javax.swing.JLabel" name="MainLbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="36" style="1"/>
