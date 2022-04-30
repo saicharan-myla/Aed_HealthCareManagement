@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
 import Code.Organization.Organization_Doctor;
+import UserInterface.Doctor.Doctor_WorkArea;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Role_Doctor  extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business, Network network) {
-        return new DoctorWorkAreaJPanel(userProcessContainer,account, (Organization_Doctor)organization,enterprise,business,network);
+        return new Doctor_WorkArea(userProcessContainer,account, (Organization_Doctor)organization,enterprise,business,network);
     }
     
     

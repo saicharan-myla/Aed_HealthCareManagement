@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
 import Code.Organization.Organization_Pharmacy;
+import UserInterface.Role_Pharmacy.WorkAreaPanel_Pharmacy;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Role_Pharmacist extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
-        return new PharmaWorkAreaJPanel(userProcessContainer, account, enterprise, (Organization_Pharmacy)organization,network);
+        return new WorkAreaPanel_Pharmacy(userProcessContainer, account, enterprise, (Organization_Pharmacy)organization,network);
         //return new PharmaManagementJPanel();
     }
 

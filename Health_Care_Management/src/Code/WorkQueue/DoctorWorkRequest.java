@@ -10,12 +10,12 @@ package Code.WorkQueue;
  *
  * @author sanjana
  */
-import Code.UsrAcc.UsrAccnt;
+import Code.Account;
 import java.util.Date;
 
 public class DoctorWorkRequest {
-    private UsrAccnt send;
-    private UsrAccnt receive;
+    private Account send;
+    private Account receive;
     private String medication_Name;
     private String patient_Name;
     private String hospital_Name;
@@ -23,19 +23,19 @@ public class DoctorWorkRequest {
     private Date request_Date;
     private int Quantity_1;
 
-    public UsrAccnt getSender() {
+    public Account getSender() {
         return send;
     }
 
-    public void setSender(UsrAccnt sender) {
+    public void setSender(Account sender) {
         this.send = sender;
     }
 
-    public UsrAccnt getReceiver() {
+    public Account getReceiver() {
         return receive;
     }
 
-    public void setReceiver(UsrAccnt receiver) {
+    public void setReceiver(Account receiver) {
         this.receive = receiver;
     }
 
