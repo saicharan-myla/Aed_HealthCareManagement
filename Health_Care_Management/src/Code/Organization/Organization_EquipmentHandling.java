@@ -4,6 +4,8 @@
  */
 package Code.Organization;
 
+import Code.Role.Role;
+import Code.Role.Role_MedicalEquipment;
 import java.util.ArrayList;
 
 /**
@@ -20,7 +22,7 @@ public class Organization_EquipmentHandling extends Organization {
     @Override 
     public ArrayList<Role> getRole() {
         ArrayList<Role> list = new ArrayList<>();
-        list.add(new MedicalEquipmentRole());
+        list.add(new Role_MedicalEquipment());
         return list;
     }
 }

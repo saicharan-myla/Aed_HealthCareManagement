@@ -5,6 +5,8 @@
 package Code.Organization;
 
 import Code.DocPrescription;
+import Code.Role.Role;
+import Code.Role.Role_Doctor;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +25,7 @@ public class Organization_Doctor extends Organization {
     @Override
     public ArrayList<Role> getRole() {
         ArrayList<Role> list = new ArrayList<>();
-        list.add(new DoctorRole());
+        list.add(new Role_Doctor());
         return list;
     }
     
