@@ -2,7 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UserInterface.UserInterface.Transportation;
+package UserInterface.Transportation;
+
+import Code.Account;
+import Code.EcoSystem;
+import Code.Organization.Organization;
+import Code.WorkQueue.TransportationWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.Properties;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,8 +23,16 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ProcessRequestJPanel
      */
-    public ProcessRequestJPanel() {
+    JPanel upperContainer;
+    TransportationWorkRequest request;
+private Account acc;
+private Organization oga;
+private EcoSystem eco;
+
+    public ProcessRequestJPanel(JPanel upperContainer, TransportationWorkRequest request) {
         initComponents();
+        this.upperContainer = upperContainer;
+ this.request = request;
     }
 
     /**
@@ -133,19 +151,19 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_JText1ActionPerformed
 
     private void BtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBackActionPerformed
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
+        upperContainer.remove(this);
+        Component[] componentArray = upperContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         TransportationWorkAreaJPanel twjp = (TransportationWorkAreaJPanel) component;
         twjp.populateTable();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
+        CardLayout layout = (CardLayout) upperContainer.getLayout();
+        layout.previous(upperContainer);
 
     }//GEN-LAST:event_BtnBackActionPerformed
 
     private void BtnNotifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNotifyActionPerformed
         request.setTime(Timecombox.getSelectedItem().toString() +" "+ AMPMCmbBox.getSelectedItem().toString()+" "+"VehicleNumber" +JText1.getText());
-        String[] to = {"yashwanth.3b8@gmail.com"};
+        String[] to = {"saicharan6118@gmail.com"};
         sendMailToCommunityMember(to,
             "Alert from Transportation department",
             "The delivery details are for the equipment "+request.getEquipmentinfo()+" are" +request.getTime(),
@@ -166,4 +184,17 @@ public class ProcessRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel trpaLbl;
     private javax.swing.JLabel vehiclenumLbl;
     // End of variables declaration//GEN-END:variables
+
+    private void sendMailToCommunityMember(String[] to, String Matter, String texts, String from, String pwd) {
+       // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+           String [] host = {"smtp@gmail.com"};
+            Properties props = System.getProperties();
+            props.put("mail.smtp.user", from);
+            props.put("mail.smtp.port", 674);
+            props.put("mail.smtp.host", host);
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.startttls.enable", "true");
+JOptionPane.showMessageDialog(this, "New notification from Transport Department");
+     
+    }
 }
