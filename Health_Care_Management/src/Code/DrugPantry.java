@@ -12,21 +12,20 @@ import java.util.Date;
  */
 public class DrugPantry {
     
-public String toString(){
-return this.drugName;
-}
-private String drugName;
-private int item_id;
-private int serialNo;
-private String Category;
-private int ReorderQuantity;
-private int MinStock;
-private int MaxStock;
-private Date Exp_Date;
-private int Quantitypresent;
-private double sellingPrice;
-private double Quantityneeded;
-private String reorderStatus = "N";
+
+    private String drugName;
+    private int item_id;
+    private int serialNo;
+    private String Category;
+    private int ReorderQuantity;
+    private int MinStock;
+    private int MaxStock;
+    private Date Exp_Date;
+    private int Quantitypresent;
+    private double purchasePrice;
+    private double sellingPrice;
+    private int Quantityneeded;
+    private String reorderStatus = "N";
 
     public String getDrugName() {
         return drugName;
@@ -108,11 +107,11 @@ private String reorderStatus = "N";
         this.sellingPrice = sellingPrice;
     }
 
-    public double getQuantityneeded() {
+    public int getQuantityneeded() {
         return Quantityneeded;
     }
 
-    public void setQuantityneeded(double Quantityneeded) {
+    public void setQuantityneeded(int Quantityneeded) {
         this.Quantityneeded = Quantityneeded;
     }
 
@@ -123,8 +122,16 @@ private String reorderStatus = "N";
     public void setReorderStatus(String reorderStatus) {
         this.reorderStatus = reorderStatus;
     }
+    
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
 
+    public void setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
 
-
-
+    public String toString() {
+        return this.drugName;
+    }
 }
