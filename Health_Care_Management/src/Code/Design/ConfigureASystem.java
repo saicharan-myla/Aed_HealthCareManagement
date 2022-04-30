@@ -4,9 +4,11 @@
  */
 package Code.Design;
 
+import Code.Account;
 import Code.EcoSystem;
 import Code.Employee;
 import Code.Role.Role_SystemAdmin;
+//mport Code.UsrAcc.UsrAccnt;
 
 /**
  *
@@ -19,8 +21,11 @@ public static EcoSystem configure(){
 
 
     EcoSystem eco = EcoSystem.getReferrence();
-     Employee employee  = eco.getEmpDir().AddEmployee("NEU");
-      UserAccount ua = eco.getUserAccDir().createUserAccount("sps","sps", employee, new Role_SystemAdmin());
+     Employee emp  = eco.getEmpDir().AddEmployee("NEU");
+     // UsrAccnt ua = eco.getUserAccDir().createUserAccount("sps","sps", emp, new Role_SystemAdmin());
+ Account ac = eco.getUserAccDir().createUserAccount("sps", "sps", emp,new Role_SystemAdmin() );
+
+
 return eco;
 
 }
