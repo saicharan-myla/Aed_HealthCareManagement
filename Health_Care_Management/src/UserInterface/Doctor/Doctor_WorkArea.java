@@ -4,12 +4,14 @@
  */
 package UserInterface.Doctor;
 
+import Code.Account;
 import Code.Doctor;
 import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
 import Code.Organization.Organization_Doctor;
 import Code.PrescriptionList;
+import Code.WorkQueue.DoctorWorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
@@ -24,7 +26,7 @@ public class Doctor_WorkArea extends javax.swing.JPanel {
 
 private JPanel userContainer;
 private Organization_Doctor org_doc;
-private UserAccount ua;
+private Account ua;
 private EnterPrise enter;
 private Doctor doctor;
 private PrescriptionList p_list;
@@ -37,9 +39,10 @@ private EcoSystem ecosystem;
 
     /**
      * Creates new form Doctor_WorkArea
+     * @param 
      */
     public Doctor_WorkArea(JPanel userContainer,Organization_Doctor org_doc,
-UserAccount ua,
+Account ua,
  EnterPrise enter,
 Network network,
 EcoSystem ecosystem) {
