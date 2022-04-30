@@ -39,8 +39,11 @@ private Account ua;
      */
     public PrescriptionJPanel(
 JPanel upperContainer, PrescriptionList prescribedList, Account ua
-, EnterPrise ent, Organization_Doctor doctororg) {
+, EnterPrise enter, Organization_Doctor doctororg) {
 
+
+
+        initComponents();
 this.uppercontainer = upperContainer;
 this.ua = ua;
 this.enter = enter;
@@ -48,8 +51,6 @@ this.doctororg = doctororg;
 
 
 populateWorkReqTable();
-
-        initComponents();
 
     }
 

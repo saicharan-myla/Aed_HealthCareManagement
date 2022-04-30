@@ -41,11 +41,13 @@ private EcoSystem ecosystem;
      * Creates new form Doctor_WorkArea
      * @param 
      */
-    public Doctor_WorkArea(JPanel userContainer,Organization_Doctor org_doc,
+    public Doctor_WorkArea(JPanel userContainer,
 Account ua,
+Organization_Doctor org_doc,
  EnterPrise enter,
-Network network,
-EcoSystem ecosystem) {
+EcoSystem ecosystem,
+Network network
+) {
         initComponents();
 this.userContainer = userContainer;
 this.ua = ua ;
