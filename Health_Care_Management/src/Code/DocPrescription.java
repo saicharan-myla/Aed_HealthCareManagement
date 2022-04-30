@@ -15,7 +15,7 @@ public class DocPrescription {
 private String Diagnosis;
 private int frequency_day;
 private int total_days;
-private int Drug;
+private String Drug;
 private Date Dategiven;
 private String Name_Netk;
 
@@ -59,11 +59,11 @@ private String Name_Netk;
         this.total_days = total_days;
     }
 
-    public int getDrug() {
+    public String getDrug() {
         return Drug;
     }
 
-    public void setDrug(int Drug) {
+    public void setDrug(String Drug) {
         this.Drug = Drug;
     }
 

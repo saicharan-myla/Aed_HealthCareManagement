@@ -4,12 +4,16 @@
  */
 package UserInterface.Doctor;
 
+import Code.Account;
 import Code.DocPrescription;
 import Code.EnterPrise;
 import Code.Organization.Organization;
 import Code.Organization.Organization_Doctor;
 import Code.Organization.Organization_Pharmacy;
 import Code.PrescriptionList;
+import Code.WorkQueue.DoctorWorkRequest;
+import Code.WorkQueue.PharmacyWorkRequest;
+import Code.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -26,7 +30,7 @@ private EnterPrise enter;
 private JPanel uppercontainer;
 private DocPrescription docpres;
 private DoctorWorkRequest docreq;
-private UserAccount ua;
+private Account ua;
 
 
 
@@ -34,9 +38,12 @@ private UserAccount ua;
      * Creates new form PrescriptionJPanel
      */
     public PrescriptionJPanel(
-JPanel upperContainer, PrescriptionList prescribedList, UserAccount ua
-, EnterPrise ent, Organization_Doctor doctororg) {
+JPanel upperContainer, PrescriptionList prescribedList, Account ua
+, EnterPrise enter, Organization_Doctor doctororg) {
 
+
+
+        initComponents();
 this.uppercontainer = upperContainer;
 this.ua = ua;
 this.enter = enter;
@@ -44,8 +51,6 @@ this.doctororg = doctororg;
 
 
 populateWorkReqTable();
-
-        initComponents();
 
     }
 
@@ -73,9 +78,10 @@ populateWorkReqTable();
         jTextFreq = new javax.swing.JTextField();
         jButtonSave = new javax.swing.JButton();
         jButton_Back = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
         jLabel7 = new javax.swing.JLabel();
         jTextdays = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jLabel1.setText("Name");
 
@@ -84,10 +90,6 @@ populateWorkReqTable();
         jLabel3.setText("Sex");
 
         jLabel4.setText("Diagnosis");
-
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -117,6 +119,19 @@ populateWorkReqTable();
 
         jLabel7.setText("Number of Days");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,12 +154,11 @@ populateWorkReqTable();
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(82, 82, 82)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                                    .addComponent(jTextField2))
+                                .addGap(61, 61, 61)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
@@ -157,14 +171,9 @@ populateWorkReqTable();
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(13, 13, 13)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(26, 26, 26))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jLabel7)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(137, 137, 137)
+                                        .addComponent(jLabel7)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButtonSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,8 +181,11 @@ populateWorkReqTable();
                                 .addGap(4, 4, 4))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton_Back)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(jButton_Back))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(336, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,20 +193,19 @@ populateWorkReqTable();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(medicalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jTextFreq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(medicalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(jTextFreq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
@@ -213,9 +224,9 @@ populateWorkReqTable();
                     .addGroup(layout.createSequentialGroup()
                         .addGap(179, 179, 179)
                         .addComponent(jButtonSave)))
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addGap(77, 77, 77)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
                 .addComponent(jButton_Back)
                 .addGap(34, 34, 34))
         );
@@ -230,17 +241,19 @@ uppercontainer.remove(this);
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
         // TODO add your handling code here:
-DoctorPrescription p = new DoctorPrescription();
+DocPrescription p = new DocPrescription();
 
-        p.setDaignosis(jTextField1.getText());
+        p.setDiagnosis(jTextField1.getText());
 
-        p.setNameOfMedicine(medicationCmbBox.getSelectedItem().toString());
+        p.setDrug(medicalComboBox.getSelectedItem().toString());
 
-        p.setNoOfDays((Integer) timesSpin.getValue());
+       // p.setNoOfDays((Integer) timesSpin.getValue());
+p.setTotal_days(Integer.parseInt(jTextdays.getText()));
+p.setFrequency_day(Integer.parseInt(jTextFreq.getText()));
 
-        p.setNoOfDays((Integer) forSpin.getValue());
-        p.setNetworkName(ent.getName());
-        String age = ageTxt.getText();
+      // p.setNoOfDays((Integer) forSpin.getValue());
+        p.setName_Netk(enter.getOrgName());
+        String age = jTextField2.getText();
         boolean flag = true;
         try {
             Integer.parseInt(age);
@@ -249,10 +262,10 @@ DoctorPrescription p = new DoctorPrescription();
             flag = false;
         }
 
-        if (p.getDaignosis().equals("")) {
+        if (p.getDiagnosis().equals("")) {
             JOptionPane.showMessageDialog(null, " Diagnosis cannot be empty!");
             flag = false;
-        } else if (nameTxt.getText().equals("")) {
+        } else if (jTextField1.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Patient name cannot be empty!");
             flag = false;
 
@@ -263,7 +276,7 @@ DoctorPrescription p = new DoctorPrescription();
             PharmacyWorkRequest request = new PharmacyWorkRequest();
 
             request.setMedicationName(medicalComboBox.getSelectedItem().toString());
-            request.setQuantity((Integer.parseInt(jTextdays.getText())) * Integer.parseInt(jTextFreq.getText());
+            request.setQuantity((Integer.parseInt(jTextdays.getText())) * Integer.parseInt(jTextFreq.getText()));
             request.setSender(ua);
             request.setStatus("Sent");
 
@@ -281,7 +294,7 @@ DoctorPrescription p = new DoctorPrescription();
             }
             if (org != null) {
 
-                org.getWorkQueue().getWorkRequestList().add(request);
+                org.getWQ().getWorkRequestList().add(request);
                 ua.getWorkQueue().getWorkRequestList().add(request);
             }
 
@@ -302,7 +315,8 @@ DoctorPrescription p = new DoctorPrescription();
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

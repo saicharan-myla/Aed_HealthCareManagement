@@ -4,12 +4,14 @@
  */
 package UserInterface.Doctor;
 
+import Code.Account;
 import Code.Doctor;
 import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
 import Code.Organization.Organization_Doctor;
 import Code.PrescriptionList;
+import Code.WorkQueue.DoctorWorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
@@ -24,7 +26,7 @@ public class Doctor_WorkArea extends javax.swing.JPanel {
 
 private JPanel userContainer;
 private Organization_Doctor org_doc;
-private UserAccount ua;
+private Account ua;
 private EnterPrise enter;
 private Doctor doctor;
 private PrescriptionList p_list;
@@ -37,12 +39,15 @@ private EcoSystem ecosystem;
 
     /**
      * Creates new form Doctor_WorkArea
+     * @param 
      */
-    public Doctor_WorkArea(JPanel userContainer,Organization_Doctor org_doc,
-UserAccount ua,
+    public Doctor_WorkArea(JPanel userContainer,
+Account ua,
+Organization_Doctor org_doc,
  EnterPrise enter,
-Network network,
-EcoSystem ecosystem) {
+EcoSystem ecosystem,
+Network network
+) {
         initComponents();
 this.userContainer = userContainer;
 this.ua = ua ;
@@ -125,7 +130,7 @@ abs.next(userContainer);
     private void Pres_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pres_ButtonActionPerformed
         // TODO add your handling code here:
 CardLayout abs = (CardLayout)userContainer.getLayout();
-userContainer.add("PrescriptionJPanel", new UserInterface.Doctor.PrescriptionJPanel(userContainer, ua,org_doc,enter,ecosystem,network));
+userContainer.add("PrescriptionJPanel", new UserInterface.Doctor.PrescriptionJPanel(userContainer,p_list,ua,enter,org_doc));
 abs.next(userContainer);
     }//GEN-LAST:event_Pres_ButtonActionPerformed
 
