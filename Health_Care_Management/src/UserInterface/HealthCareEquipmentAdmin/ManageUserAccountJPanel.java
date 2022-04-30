@@ -4,17 +4,35 @@
  */
 package UserInterface.HealthCareEquipmentAdmin;
 
+import Code.Account;
+import Code.Employee;
+import Code.EnterPrise;
+import Code.Organization.Organization;
+import Code.Role.Role;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author saich
  */
 public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
+
+
+
+   private JPanel panel;
+ private EnterPrise enter;
     /**
      * Creates new form ManageUserAccountJPanel
      */
-    public ManageUserAccountJPanel() {
+    public ManageUserAccountJPanel(JPanel panel, EnterPrise enter) {
         initComponents();
+this.panel = panel;
+this.enter = enter;
+populateOrganizationCMBbox();
+        populateTableData();
     }
 
     /**
@@ -196,9 +214,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_pwdTextActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        container.remove(this);
-        CardLayout layout = (CardLayout) container.getLayout();
-        layout.previous(container);
+        panel.remove(this);
+        CardLayout layout = (CardLayout) panel.getLayout();
+        layout.previous(panel);
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void createuserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createuserBtnActionPerformed
@@ -208,8 +226,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Employee employee = (Employee) CmbboxEmployee.getSelectedItem();
         Role role = (Role) CmbboxRole.getSelectedItem();
 
-        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
-        popData();
+        organization.getUserAccDir().createUserAccount(userName, password, employee, role);
+        populateTableData();
 
     }//GEN-LAST:event_createuserBtnActionPerformed
 
@@ -239,4 +257,44 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JTable userTbl;
     private javax.swing.JLabel usernameLbl;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTableData() {
+        // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        DefaultTableModel model = (DefaultTableModel) userTbl.getModel();
+        model.setRowCount(0);
+        for (Organization organization : enter.getOrgaDirectory().getOrganizations()){
+            for (Account acc : organization.getUserAccDir().getAccountList()){
+                Object row[] = new Object[2];
+                row[0] = acc;
+                row[1] = acc.getRole();
+                ((DefaultTableModel)userTbl.getModel()).addRow(row);
+                
+            }
+        }
+    }
+
+    private void populateEmployeeComboBox(Organization organization) {
+         // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         CmbboxEmployee.removeAllItems();
+        for (Employee employee : organization.getEmpDir().getE_List()){
+            CmbboxEmployee.addItem(employee);
+        }
+    }
+
+    private void populateRoleComboBox(Organization organization) {
+       // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+ CmbboxRole.removeAllItems();
+        for (Role role : organization.getRole()){
+            CmbboxRole.addItem(role);
+        
+    }
+    }
+
+    private void populateOrganizationCMBbox() {
+       // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    CmbboxOrganization.removeAllItems();
+        for (Organization organization : enter.getOrgaDirectory().getOrganizations()){
+            CmbboxOrganization.addItem(organization);
+        }
+}
 }
