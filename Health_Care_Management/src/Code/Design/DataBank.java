@@ -5,6 +5,7 @@
 package Code.Design;
 
 import Code.Organization.Organization_Admin;
+import Code.Product;
 import Code.WorkQueue.HealthcareEquipmentWorkRequest;
 import Schema.WorkQueue.DoctorWorkRequest;
 import Schema.WorkQueue.PharmacyWorkRequest;
@@ -83,10 +84,10 @@ public static String createEquipName() {
     }
 
 
-public static Delieverable  MedicineName_SetUp (){
+public static Product  MedicineName_SetUp (){
 
-Delievrable rewq = new Deliverable();
-rewq.setMed_Name(createMedName());
+Product rewq = new Product();
+rewq.setDrugName(createeMedicine());
 return rewq;
 
 
@@ -130,16 +131,16 @@ public static  DoctorWorkRequest PatientsInfo(){
 DoctorWorkRequest dr = new DoctorWorkRequest();
 dr.setHospitalName(createHospitalName());
 dr.setPatientName(createPaitentName());
-
-
+        return dr;
 }
 
-public static Deliverable VaccineNameSetup(){
 
-Deliverable drv = new Deliverable();
+public static Product VaccineNameSetup(){
 
-drv.setNameofVaccine(createVaccineName());
-drv.setNameofHospital(createHospitalName());
+Product drv = new Product();
+
+drv.setVaccineName(createVaccineName());
+drv.setHospitalName(createHospitalName());
 return drv ;
 
 
