@@ -5,6 +5,7 @@
 package Code;
 
 import Code.Role.Role;
+import Code.WorkQueue.WorkQueue;
 
 /**
  *

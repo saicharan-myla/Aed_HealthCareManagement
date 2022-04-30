@@ -4,6 +4,7 @@
  */
 package Code;
 
+import Code.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -20,7 +21,7 @@ super(name,EnterPrise.EntType.Supplier);
 
 //override
 @Override
-public ArrayList<Role> SupportedRole(){
+public ArrayList<Role> getRole(){
 
 return null;
 

@@ -4,6 +4,8 @@
  */
 package Code;
 
+import Code.Role.Role;
+import Code.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +27,7 @@ equipmentQueueTask = new WorkQueue();
 //override
 
 @Override
-public ArrayList<Role> SupportRole(){
+public ArrayList<Role> getRole(){
 return null;
 }
 

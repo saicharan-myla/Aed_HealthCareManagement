@@ -4,8 +4,14 @@
  */
 package UserInterface.Role_HospitalAdmin;
 
+import Code.Account;
+import Code.Employee;
 import Code.EnterPrise;
+import Code.Organization.Organization;
+import Code.Role.Role;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,7 +19,7 @@ import javax.swing.JPanel;
  */
 public class ManagePanel_Account extends javax.swing.JPanel {
     
-    private EnterPrise ent;
+    private EnterPrise enterprise;
     private JPanel panel;
 
     /**
@@ -21,8 +27,45 @@ public class ManagePanel_Account extends javax.swing.JPanel {
      */
     public ManagePanel_Account(JPanel p, EnterPrise e) {
         initComponents();
-        this.ent=e;
+        this.enterprise=e;
         this.panel=p;
+        
+        fillCmbOrg();
+        fillRows();
+    }
+    
+    public void fillCmbOrg() {
+        cmbOrg.removeAllItems();
+        for (Organization o : enterprise.getOrgaDirectory().getOrganizations()) {
+            cmbOrg.addItem(o);
+        }
+    }
+
+    public void fillRows() {
+        DefaultTableModel m = (DefaultTableModel) tblAcc.getModel();
+        m.setRowCount(0);
+        for (Organization o : enterprise.getOrgaDirectory().getOrganizations()) {
+            for (Account a : o.getUserAccDir().getAccountList()) {
+                Object r[] = new Object[2];
+                r[0] = a.getUsrnm();
+                r[1] = a.getRole();
+                ((DefaultTableModel) tblAcc.getModel()).addRow(r);
+            }
+        }
+    }
+
+    public void fillCmbRole(Organization o) {
+        cmbRole.removeAllItems();
+        for (Role r : o.getRole()) {
+            cmbRole.addItem(r);
+        }
+    }
+
+    public void fillCmbEmp(Organization o) {
+        cmbEmp.removeAllItems();
+        for (Employee e : o.getEmpDir().getE_List()) {
+            cmbEmp.addItem(e);
+        }
     }
 
     /**
@@ -34,19 +77,196 @@ public class ManagePanel_Account extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        scrollPane = new javax.swing.JScrollPane();
+        tblAcc = new javax.swing.JTable();
+        lblHeader = new javax.swing.JLabel();
+        lblRole = new javax.swing.JLabel();
+        cmbEmp = new javax.swing.JComboBox();
+        cmbRole = new javax.swing.JComboBox();
+        cmbOrg = new javax.swing.JComboBox();
+        lblPwd = new javax.swing.JLabel();
+        lblEmp = new javax.swing.JLabel();
+        lblUsr = new javax.swing.JLabel();
+        txtUsr = new javax.swing.JTextField();
+        lblOrg = new javax.swing.JLabel();
+        txtPwd = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+
+        tblAcc.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User Name", "Role"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPane.setViewportView(tblAcc);
+
+        lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
+        lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHeader.setText("Manage User Account");
+
+        lblRole.setText("Role             :");
+
+        cmbEmp.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbEmpActionPerformed(evt);
+            }
+        });
+
+        cmbRole.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbRole.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbRoleActionPerformed(evt);
+            }
+        });
+
+        cmbOrg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbOrgActionPerformed(evt);
+            }
+        });
+
+        lblPwd.setText("Password      :");
+
+        lblEmp.setText("Employee      :");
+
+        lblUsr.setText("User Name    :");
+
+        lblOrg.setText("Organization  :");
+
+        btnCreate.setText("Create Account");
+
+        btnBack.setText("<< Back");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblOrg))
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmbEmp, 0, 202, Short.MAX_VALUE)
+                            .addComponent(cmbOrg, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblRole)
+                            .addGap(70, 70, 70)
+                            .addComponent(cmbRole, 0, 202, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblUsr)
+                                .addComponent(lblPwd))
+                            .addGap(75, 75, 75)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtUsr, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                                .addComponent(txtPwd)))))
+                .addGap(362, 362, 362))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblHeader)
+                .addGap(18, 18, 18)
+                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblOrg)
+                    .addComponent(cmbOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmp)
+                    .addComponent(cmbEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblRole)
+                    .addComponent(cmbRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsr)
+                    .addComponent(txtUsr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPwd)
+                    .addComponent(txtPwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreate)
+                    .addComponent(btnBack))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrgActionPerformed
+        Organization o = (Organization) cmbOrg.getSelectedItem();
+        if (o!=null){
+            fillCmbEmp(o);
+            fillCmbRole(o);
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_cmbOrgActionPerformed
+
+    private void cmbRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRoleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbRoleActionPerformed
+
+    private void cmbEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEmpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbEmpActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JComboBox cmbEmp;
+    private javax.swing.JComboBox cmbOrg;
+    private javax.swing.JComboBox cmbRole;
+    private javax.swing.JLabel lblEmp;
+    private javax.swing.JLabel lblHeader;
+    private javax.swing.JLabel lblOrg;
+    private javax.swing.JLabel lblPwd;
+    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblUsr;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JTable tblAcc;
+    private javax.swing.JTextField txtPwd;
+    private javax.swing.JTextField txtUsr;
     // End of variables declaration//GEN-END:variables
 }

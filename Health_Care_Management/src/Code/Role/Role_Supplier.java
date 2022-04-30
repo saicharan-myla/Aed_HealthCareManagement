@@ -4,10 +4,13 @@
  */
 package Code.Role;
 
+import Code.Account;
+import Code.EcoSystem;
 import Code.EnterPrise;
 import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
+import UserInterface.Role_Supplier.WorkAreaPanel_Supplier;
 
 /**
  *
@@ -16,8 +19,8 @@ import Code.Organization.Organization;
 public class Role_Supplier extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
-        return new SupplierWorkAreaJPanel(userProcessContainer,business,account,organization);
+    public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
+        return new WorkAreaPanel_Supplier(userProcessContainer,business,account,organization);
     }
 
     @Override

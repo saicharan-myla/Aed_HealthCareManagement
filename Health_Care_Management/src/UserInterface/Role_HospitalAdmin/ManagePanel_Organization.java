@@ -5,7 +5,11 @@
 package UserInterface.Role_HospitalAdmin;
 
 import Code.Organization.Directory_Organization;
+import Code.Organization.Organization;
+import Code.Organization.Organization.OrganizationType;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +27,28 @@ public class ManagePanel_Organization extends javax.swing.JPanel {
         initComponents();
         this.panel=p;
         this.od = od;
+        fillRows();
+        fillCmb();
+    }
+    
+    private void fillRows() {
+        DefaultTableModel m = (DefaultTableModel) tblOrg.getModel();
+        m.setRowCount(0);
+        for (Organization o : od.getOrganizations()) {
+            Object[] r = new Object[2];
+            r[0] = o.getOrgId();
+            r[1] = o.getOrgName();
+            m.addRow(r);
+        }
+    }
+
+    private void fillCmb() {
+        cmbOrg.removeAllItems();
+        for (OrganizationType t : Organization.OrganizationType.values()) {
+            if (!OrganizationType.Admin.getValue().equals(t.getValue())) {
+                cmbOrg.addItem(t);
+            }
+        }
     }
 
     /**
@@ -34,19 +60,135 @@ public class ManagePanel_Organization extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblHeader = new javax.swing.JLabel();
+        lblOrgType = new javax.swing.JLabel();
+        scrollPane = new javax.swing.JScrollPane();
+        tblOrg = new javax.swing.JTable();
+        cmbOrg = new javax.swing.JComboBox();
+        btnBack = new javax.swing.JButton();
+        btnOrgAdd = new javax.swing.JButton();
+
+        lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
+        lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHeader.setText("Manage Organization");
+
+        lblOrgType.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblOrgType.setText("Organization Type :");
+
+        tblOrg.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Name"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPane.setViewportView(tblOrg);
+
+        cmbOrg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbOrgActionPerformed(evt);
+            }
+        });
+
+        btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnOrgAdd.setText("Add Organization");
+        btnOrgAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrgAddActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(339, 339, 339)
+                        .addComponent(lblOrgType, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnOrgAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmbOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 94, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(232, 232, 232))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(lblHeader)
+                .addGap(44, 44, 44)
+                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblOrgType)
+                    .addComponent(cmbOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOrgAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbOrgActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+
+        panel.remove(this);
+        CardLayout layout = (CardLayout) panel.getLayout();
+        layout.previous(panel);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnOrgAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrgAddActionPerformed
+        OrganizationType ot = (OrganizationType) cmbOrg.getSelectedItem();
+        od.addOrg(ot);
+        fillRows();
+    }//GEN-LAST:event_btnOrgAddActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnOrgAdd;
+    private javax.swing.JComboBox cmbOrg;
+    private javax.swing.JLabel lblHeader;
+    private javax.swing.JLabel lblOrgType;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JTable tblOrg;
     // End of variables declaration//GEN-END:variables
 }

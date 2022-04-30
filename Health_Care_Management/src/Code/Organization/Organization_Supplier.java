@@ -4,6 +4,8 @@
  */
 package Code.Organization;
 
+import Code.Role.Role;
+import Code.Role.Role_Supplier;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +21,7 @@ public class Organization_Supplier extends Organization {
     @Override
     public ArrayList<Role> getRole(){
         ArrayList<Role> list = new ArrayList<>();
-        list.add(new SupplierRole());
+        list.add(new Role_Supplier());
         return list;
     }
 }

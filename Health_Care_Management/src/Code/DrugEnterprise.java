@@ -4,6 +4,8 @@
  */
 package Code;
 
+import Code.Role.Role;
+import Code.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 import java.util.concurrent.ForkJoinPool;
 
@@ -23,7 +25,7 @@ equiptaskqueue = new WorkQueue();
 }
 // override 
 @Override
-public ArrayList<Role>SupportedRole(){
+public ArrayList<Role>getRole(){
 
 
 return null;

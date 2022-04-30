@@ -39,10 +39,10 @@ public class Directory_Organization {
             org = new Organization_Supplier();
             organizations.add(org);
         } else if (OrganizationType.MedicalEquipment.getValue().equalsIgnoreCase(t.getValue())) {
-            org = new EquipmentHandlingOrganization();
+            org = new Organization_EquipmentHandling();
             organizations.add(org);
         } else if (OrganizationType.Transport.getValue().equalsIgnoreCase(t.getValue())) {
-            org = new TransportOrganization();
+            org = new Organization_Transport();
             organizations.add(org);
         }
         return org;
