@@ -4,9 +4,12 @@
  */
 package Code.Role;
 
+import Code.Account;
+import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
 import Code.Organization.Organization;
+import UserInterface.Role_Administration.WorkAreaPanel_Admin;
 import javax.swing.JPanel;
 
 /**
@@ -15,8 +18,8 @@ import javax.swing.JPanel;
  */
 public class Role_Admin extends Role {
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
-        return new AdminWorkAreaJPanel(userProcessContainer, enterprise);
+    public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem business,Network network) {
+        return new WorkAreaPanel_Admin(userProcessContainer, enterprise);
     }
 
     @Override
