@@ -195,12 +195,12 @@ populateWorkTable();
     private void jButtonSendReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendReqActionPerformed
         // TODO add your handling code here:
  HealthcareEquipmentWorkRequest request = new HealthcareEquipmentWorkRequest();
-        request.setEquipmentName(equipnameCmbBox.getSelectedItem().toString());
-        request.setSender(ua);
+        request.setEquipmentName(jComboBox1.getSelectedItem().toString());
+        request.setSender(acc);
         request.setStatus("Sent");
-        request.setUrgencyLevel(equipnameCmbBox1.getSelectedItem().toString());
+        request.setUrgencyLevel(jComboBox2.getSelectedItem().toString());
         
-        request.setQuantity(Integer.parseInt(qtyTxtFld.getValue().toString()));
+        request.setQuantity(Integer.parseInt(jSpinner1.getValue().toString()));
         
         Date date = new Date();
         int min = 20;
@@ -211,15 +211,15 @@ populateWorkTable();
         int n2 = rand.nextInt(10) + 1;
         
         request.setActualprice(n1);
-        request.setHospitalName(ent.getName());
+        request.setHospitalName(enter.getOrgName());
         
         
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         request.setRequestDate(dateFormat.format(date));
     request.setLoanedprice(n2);
     Organization org = null;
-        for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
-            if (organization instanceof DoctorOrganization) {
+        for (Organization organization : enter.getOrgaDirectory().getOrganizations()) {
+            if (organization instanceof Organization_Doctor) {
                 org = organization;
                 System.out.println("****" + org);
                 break;
