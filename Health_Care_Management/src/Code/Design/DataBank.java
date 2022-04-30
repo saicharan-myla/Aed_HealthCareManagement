@@ -8,7 +8,7 @@ import Code.Organization.Organization_Admin;
 import Code.Product;
 import Code.WorkQueue.HealthcareEquipmentWorkRequest;
 import Code.WorkQueue.DoctorWorkRequest;
-import Schema.WorkQueue.PharmacyWorkRequest;
+import Code.WorkQueue.PharmacyWorkRequest;
 import java.util.Random;
 
 /**

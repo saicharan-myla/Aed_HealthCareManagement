@@ -130,7 +130,7 @@ abs.next(userContainer);
     private void Pres_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pres_ButtonActionPerformed
         // TODO add your handling code here:
 CardLayout abs = (CardLayout)userContainer.getLayout();
-userContainer.add("PrescriptionJPanel", new UserInterface.Doctor.PrescriptionJPanel(userContainer, ua,org_doc,enter,ecosystem,network));
+userContainer.add("PrescriptionJPanel", new UserInterface.Doctor.PrescriptionJPanel(userContainer,p_list,ua,enter,org_doc));
 abs.next(userContainer);
     }//GEN-LAST:event_Pres_ButtonActionPerformed
 

@@ -4,17 +4,61 @@
  */
 package UserInterface.Doctor;
 
+import Code.Account;
+import Code.DocPrescription;
+import Code.EcoSystem;
+import Code.EnterPrise;
+import Code.MedicalEquipPantryEnterPrise;
+import Code.Network;
+import Code.Organization.Organization;
+import Code.Organization.Organization_Doctor;
+import Code.Organization.Organization_EquipmentHandling;
+import Code.PrescriptionList;
+import Code.WorkQueue.DoctorWorkRequest;
+import Code.WorkQueue.HealthcareEquipmentWorkRequest;
+import Code.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author saich
  */
 public class HealthCareEquipmentManagementJpanel extends javax.swing.JPanel {
 
+
+
+private DocPrescription docpres;
+private  DoctorWorkRequest docreq;
+private  EnterPrise enter;
+private Account acc;
+private JPanel upperContainer;
+private Organization_Doctor doctorOrg;
+private PrescriptionList p_list; 
+private EcoSystem eco;
+private Network ntk ;
+private EnterPrise.EntType enttpe;
+private Organization_EquipmentHandling eqhandle;
+private MedicalEquipPantryEnterPrise medenter;
+
+
     /**
      * Creates new form HealthCareEquipmentManagementJpanel
      */
-    public HealthCareEquipmentManagementJpanel() {
+    public HealthCareEquipmentManagementJpanel(JPanel upperContainer,Account acc,Organization_Doctor doctorOrg,EnterPrise enter, EcoSystem eco, Network ntk) {
         initComponents();
+this.upperContainer = upperContainer;
+this.acc = acc;
+this.enter = enter;
+this.doctorOrg = doctorOrg;
+this.ntk = ntk;
+this.eco = eco;
+
+populateWorkTable();
     }
 
     /**
@@ -26,19 +70,251 @@ public class HealthCareEquipmentManagementJpanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        Emergency = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jSpinner1 = new javax.swing.JSpinner();
+        jButtonBack = new javax.swing.JButton();
+        jButtonSendReq = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel1.setText("Equipment");
+
+        Emergency.setText("Priority");
+
+        jLabel3.setText("Quantity");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jButtonBack.setText("Back");
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackActionPerformed(evt);
+            }
+        });
+
+        jButtonSendReq.setText("Send Request");
+        jButtonSendReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSendReqActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Request Eqipment");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Emergency)
+                            .addComponent(jLabel3))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonBack)
+                        .addGap(54, 54, 54)
+                        .addComponent(jButtonSendReq))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Emergency)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonBack)
+                    .addComponent(jButtonSendReq))
+                .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
+        // TODO add your handling code here:
+     upperContainer.remove(this);
+        CardLayout layout = (CardLayout) upperContainer.getLayout();
+        layout.previous(upperContainer);  
+
+   
+    }//GEN-LAST:event_jButtonBackActionPerformed
+
+    private void jButtonSendReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendReqActionPerformed
+        // TODO add your handling code here:
+ HealthcareEquipmentWorkRequest request = new HealthcareEquipmentWorkRequest();
+        request.setEquipmentName(equipnameCmbBox.getSelectedItem().toString());
+        request.setSender(ua);
+        request.setStatus("Sent");
+        request.setUrgencyLevel(equipnameCmbBox1.getSelectedItem().toString());
+        
+        request.setQuantity(Integer.parseInt(qtyTxtFld.getValue().toString()));
+        
+        Date date = new Date();
+        int min = 20;
+        int max = 40;       
+        Random rand = new Random();
+
+        int n1 = rand.nextInt((max - min)) + 1;
+        int n2 = rand.nextInt(10) + 1;
+        
+        request.setActualprice(n1);
+        request.setHospitalName(ent.getName());
+        
+        
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        request.setRequestDate(dateFormat.format(date));
+    request.setLoanedprice(n2);
+    Organization org = null;
+        for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+            if (organization instanceof DoctorOrganization) {
+                org = organization;
+                System.out.println("****" + org);
+                break;
+            }
+        }
+    org.getWQ().getWorkRequestList().add(request);
+        acc.getWorkQueue().getWorkRequestList().add(request);
+        // equiporg.getWorkQueue().getWorkRequestList().add(request);
+        System.out.println("****** " + org.getOrgName());
+        System.out.println("******" + enter.getOrgName());
+        System.out.println("**** " + ntk.getNetwork_Name());
+        for (Network network : eco.getNetworks()) {
+
+            if (ntk.getNetwork_Name().equals(this.ntk.getNetwork_Name())) {
+                for (EnterPrise ent : ntk.getDirectoEnterpri().getEnterpList()) {
+                    System.out.println("****" + ent.getOrgName());
+                    System.out.println("******" + ent.getEnterprise_type());
+        for (Organization organization : ent.getOrgaDirectory().getOrganizations()) {
+                        System.out.println("***** Organizatio Name:" + organization.getOrgName());
+                        if (organization.getOrgName().equals("Equipment Organization")) {
+                            System.out.println("True");
+                            System.out.println("***** organization Name" + organization.getOrgName());
+                            organization.getWQ().getWorkRequestList().add(request);
+                        }
+                    }
+                }
+
+            }
+         acc.getWorkQueue().getWorkRequestList().add(request);
+populateWorkTable();
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }//GEN-LAST:event_jButtonSendReqActionPerformed
+
+    private void populateWorkTable() {
+         // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        model.setRowCount(0);
+        for (WorkRequest request : doctorOrg.getWQ().getWorkRequestList()) {
+            Object[] row = new Object[9];
+
+            row[0] = ((HealthcareEquipmentWorkRequest) request);
+            String urgencyLevel = ((HealthcareEquipmentWorkRequest) request).getUrgencyLevel();
+            row[1] = urgencyLevel;
+            int quantity = ((HealthcareEquipmentWorkRequest) request).getQuantity();
+            row[2] = quantity;
+            row[3] = request.getSender();
+            row[4] = ((HealthcareEquipmentWorkRequest) request).getReceiver();
+            row[5] = request.getStatus();
+            
+            String expectedArrivalTime = ((HealthcareEquipmentWorkRequest) request).getExpectedArrivalTime();
+            
+            row[6] = request.getRequestDate();
+            row[7] = ((HealthcareEquipmentWorkRequest) request).getActualprice();
+            row[8] = ((HealthcareEquipmentWorkRequest) request).getLoanedprice();
+
+            model.addRow(row);
+        }
+       
+    }
+
+
+
+
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Emergency;
+    private javax.swing.JButton jButtonBack;
+    private javax.swing.JButton jButtonSendReq;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
 }
