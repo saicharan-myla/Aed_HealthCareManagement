@@ -10,7 +10,7 @@ import Code.EnterPrise;
 import Code.Organization.Organization;
 import Code.WorkQueue.SupplierWorkRequest;
 import Code.WorkQueue.WorkRequest;
-import Schema.WorkQueue.OperationsWorkRequest;
+import Code.WorkQueue.OperationsWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
