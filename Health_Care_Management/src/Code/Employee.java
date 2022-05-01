@@ -9,15 +9,16 @@ package Code;
  * @author saich
  */
 public class Employee {
+
     private String EName;
     private static int counter = 1;
- private int EId;
+    private int EId;
 
-public Employee(){
+    public Employee() {
 
-EId = counter;
-counter++;
-}
+        EId = counter;
+        counter++;
+    }
 
     public String getEName() {
         return EName;
@@ -27,11 +28,6 @@ counter++;
         this.EName = EName;
     }
 //to display in table
-@Override
-public String toString(){
-
-return EName;
-}
 
     public static int getCounter() {
         return counter;
@@ -47,6 +43,12 @@ return EName;
 
     public void setEId(int EId) {
         this.EId = EId;
+    }
+
+    @Override
+    public String toString() {
+
+        return EName;
     }
 
 }

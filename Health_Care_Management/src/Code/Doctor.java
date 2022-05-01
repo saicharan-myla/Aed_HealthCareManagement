@@ -9,17 +9,14 @@ package Code;
  * @author saich
  */
 public class Doctor {
-    private String Name;
-   private  PrescriptionList presList;
 
-    public String getName() {
-        return Name;
+    private String Name;
+    private PrescriptionList presList;   
+    public Doctor() {
+
+        presList = new PrescriptionList();
     }
 
-public Doctor(){
-
-presList = new PrescriptionList();
-}
     public void setName(String Name) {
         this.Name = Name;
     }
@@ -30,6 +27,9 @@ presList = new PrescriptionList();
 
     public void setPresList(PrescriptionList presList) {
         this.presList = presList;
+    }
+    public String getName() {
+        return Name;
     }
 
 }

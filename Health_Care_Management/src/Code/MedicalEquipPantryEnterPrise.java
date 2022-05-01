@@ -13,23 +13,21 @@ import java.util.ArrayList;
  * @author saich
  */
 public class MedicalEquipPantryEnterPrise extends EnterPrise {
-    
-private WorkQueue equipmentQueueTask;
-public MedicalEquipPantryEnterPrise(String name){
 
-super(name, EnterPrise.EntType.MedicalEquiPantry);
-equipmentQueueTask = new WorkQueue();
+    private WorkQueue equipmentQueueTask;
 
+    public MedicalEquipPantryEnterPrise(String name) {
 
+        super(name, EnterPrise.EntType.MedicalEquiPantry);
+        equipmentQueueTask = new WorkQueue();
 
-}
+    }
 
 //override
-
-@Override
-public ArrayList<Role> getRole(){
-return null;
-}
+    @Override
+    public ArrayList<Role> getRole() {
+        return null;
+    }
 
     public WorkQueue getEquipmentQueueTask() {
         return equipmentQueueTask;
@@ -38,13 +36,5 @@ return null;
     public void setEquipmentQueueTask(WorkQueue equipmentQueueTask) {
         this.equipmentQueueTask = equipmentQueueTask;
     }
-
-
-
-
-
-
-
-
 
 }

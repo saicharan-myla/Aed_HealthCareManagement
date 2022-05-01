@@ -17,17 +17,15 @@ import Code.Role.Role_SystemAdmin;
 public class ConfigureASystem {
 
 
-public static EcoSystem configure(){
+    public static EcoSystem configure() {
 
+        EcoSystem eco = EcoSystem.getReferrence();
+        Employee emp = eco.getEmpDir().AddEmployee("NEU");
+        // UsrAccnt ua = eco.getUserAccDir().createUserAccount("sps","sps", emp, new Role_SystemAdmin());
+        Account ac = eco.getUserAccDir().createUserAccount("sps", "sps", emp, new Role_SystemAdmin());
 
-    EcoSystem eco = EcoSystem.getReferrence();
-     Employee emp  = eco.getEmpDir().AddEmployee("NEU");
-     // UsrAccnt ua = eco.getUserAccDir().createUserAccount("sps","sps", emp, new Role_SystemAdmin());
- Account ac = eco.getUserAccDir().createUserAccount("sps", "sps", emp,new Role_SystemAdmin() );
+        return eco;
 
-
-return eco;
-
-}
+    }
     
 }

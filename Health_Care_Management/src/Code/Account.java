@@ -18,6 +18,10 @@ public class Account {
     private WorkQueue workQueue;
     private Employee emp;
 
+
+  public Account(){
+  workQueue = new WorkQueue();
+}
     public String getUsrnm() {
         return usrnm;
     }

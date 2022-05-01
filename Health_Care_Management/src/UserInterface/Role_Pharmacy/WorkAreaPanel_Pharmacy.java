@@ -38,7 +38,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
      */
     public WorkAreaPanel_Pharmacy(JPanel panel, Account acc, EnterPrise enterprise, Organization_Pharmacy op, Network network) {
         initComponents();
-        this.op=(Organization_Pharmacy) orgz;
+        this.op=(Organization_Pharmacy) op;
         this.panel=panel;
         this.network=network;
         this.enterprise=enterprise;
@@ -70,14 +70,14 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         for (int i = rc - 1; i >= 0; i--) {
             tbl.removeRow(i);
         }
-        for (DrugPantry dp : op.getDrugs()) {
+        for (DrugPantry i : op.getDrugs()) {
             Object o[] = new Object[6];
-            o[0] = dp;
-            o[1] = dp.getSerialNo();
-            o[2] = dp.getQuantitypresent();
-            o[3] = dp.getQuantityneeded();
-            o[4] = dp.getReorderQuantity();
-            o[5] = dp.getReorderStatus();
+            o[0] = i;
+            o[1] = i.getSerialNo();
+            o[2] = i.getQuantitypresent();
+            o[3] = i.getQuantityneeded();
+            o[4] = i.getReorderQuantity();
+            o[5] = i.getReorderStatus();
             tbl.addRow(o);
         }
 
@@ -116,11 +116,13 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         tblDoc = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(204, 204, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("PHARMACY MEDICINE INVENTORY LOG");
+        add(lblHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 26, 1069, -1));
 
         tblPharmacy.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -147,6 +149,8 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         });
         scrollPane.setViewportView(tblPharmacy);
 
+        add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 88, 1025, 220));
+
         btnStatus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnStatus.setText("INVENTORY STATUS CHECK!");
         btnStatus.addActionListener(new java.awt.event.ActionListener() {
@@ -154,21 +158,32 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnStatusActionPerformed(evt);
             }
         });
+        add(btnStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 326, 309, 38));
 
         lblSerialNumber.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblSerialNumber.setText("SERIAL NUMBER:");
+        add(lblSerialNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 398, 236, -1));
 
         lblMedicine.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblMedicine.setText("MEDICNE NAME:");
+        add(lblMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 439, 236, -1));
 
         lblAvailableQuantity.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblAvailableQuantity.setText("AVAILABLE QUANTITY:");
+        add(lblAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 480, 236, -1));
 
         lblReqQuantity.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblReqQuantity.setText("REQUIRED QUANTITY:");
+        add(lblReqQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 514, 236, -1));
 
         lblReorder.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblReorder.setText("REORDER LEVEL:");
+        add(lblReorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 548, 236, -1));
+        add(txtSerialNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 398, 257, 25));
+        add(txtMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 439, 257, 25));
+        add(txtAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 471, 257, 25));
+        add(txtReqQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 514, 257, 25));
+        add(txtReorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 548, 257, 25));
 
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBack.setText("<<BACK");
@@ -177,6 +192,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 605, 138, -1));
 
         btnAddMedicine.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnAddMedicine.setText("ADD MEDICINE");
@@ -185,6 +201,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnAddMedicineActionPerformed(evt);
             }
         });
+        add(btnAddMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 605, 257, -1));
 
         btnDetails.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnDetails.setText("VIEW DETAILS >>");
@@ -193,6 +210,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnDetailsActionPerformed(evt);
             }
         });
+        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 398, 309, 38));
 
         btnReqs.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnReqs.setText("VIEW REQUESTS");
@@ -201,13 +219,16 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnReqsActionPerformed(evt);
             }
         });
+        add(btnReqs, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 467, 309, 38));
 
         btnViewReq.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnViewReq.setText("VIEW REQUESTS FROM DOCTORS");
+        add(btnViewReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 535, -1, 38));
 
         lblDocTbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDocTbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDocTbl.setText("View Requests from Doctor:");
+        add(lblDocTbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 654, 1069, 35));
 
         tblDoc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -219,111 +240,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         ));
         scrollPane2.setViewportView(tblDoc);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblReqQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblSerialNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblReorder, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(0, 0, Short.MAX_VALUE)
-                                    .addComponent(btnStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtReqQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
-                                            .addComponent(txtReorder, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
-                                            .addComponent(btnAddMedicine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(btnViewReq)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(btnDetails, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnReqs, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE))))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(lblAvailableQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtAvailableQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(lblMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 38, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(scrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblDocTbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(lblHeader)
-                .addGap(18, 18, 18)
-                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblSerialNumber)
-                            .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblMedicine)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblAvailableQuantity))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addComponent(txtAvailableQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnReqs, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblReqQuantity)
-                            .addComponent(txtReqQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblReorder)
-                            .addComponent(txtReorder, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnViewReq, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBack)
-                    .addComponent(btnAddMedicine))
-                .addGap(18, 18, 18)
-                .addComponent(lblDocTbl, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(scrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 698, 825, 241));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatusActionPerformed

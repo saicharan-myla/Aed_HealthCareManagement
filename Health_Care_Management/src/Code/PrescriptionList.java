@@ -14,28 +14,14 @@ import java.util.ArrayList;
  */
 public class PrescriptionList {
 
-private ArrayList <DocPrescription>  dpresList;
+    private ArrayList<DocPrescription> dpresList;
 
- public DocPrescription addDocPres(){
-    DocPrescription dosage = new DocPrescription();
-   dpresList.add(dosage);
-   return dosage;
+    public DocPrescription addDocPres() {
+        DocPrescription dosage = new DocPrescription();
+        dpresList.add(dosage);
+        return dosage;
 
-
-
-}
-
-
-
-
-   /* public <any> getDpresList() {
-        return dpresList;
-    }*/
-
-
-    /*public void setDpresList(<any> dpresList) {
-        this.dpresList = dpresList;
-    }*/
+    }
 
     public ArrayList<DocPrescription> getDpresList() {
         return dpresList;
@@ -44,6 +30,5 @@ private ArrayList <DocPrescription>  dpresList;
     public void setDpresList(ArrayList<DocPrescription> dpresList) {
         this.dpresList = dpresList;
     }
- 
-    
+
 }

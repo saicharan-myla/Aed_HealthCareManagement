@@ -19,7 +19,6 @@ private int quantity;
 private String SerialNo;
 private Date Mfg_Date;
 private Date Exp_Date;
-private String ShipmentStatus;
 
     public String getDunit() {
         return Dunit;
@@ -77,13 +76,6 @@ private String ShipmentStatus;
         this.Exp_Date = Exp_Date;
     }
 
-    public String getShipmentStatus() {
-        return ShipmentStatus;
-    }
-
-    public void setShipmentStatus(String ShipmentStatus) {
-        this.ShipmentStatus = ShipmentStatus;
-    }
-
+   
 
 }
