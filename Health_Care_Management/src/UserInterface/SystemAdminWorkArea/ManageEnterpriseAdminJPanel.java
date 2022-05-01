@@ -248,7 +248,7 @@ populateNetworkComnBox();
     }//GEN-LAST:event_ComNetActionPerformed
 
     private void ComenterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComenterActionPerformed
-        EnterPrise ent =(EnterPrise) Comenter.getSelectedItem();
+        EnterPrise ent = (EnterPrise) Comenter.getSelectedItem();
         if(ent != null){
             // TODO add your handling code here:
     }//GEN-LAST:event_ComenterActionPerformed
@@ -307,6 +307,7 @@ for(Network ntw : eco.getNetworks()){
 Comenter.removeAllItems();
     for(EnterPrise enterprise : network.getDirectoEnterpri().getEnterpList()){
      Comenter.addItem(enterprise);
+System.out.println("I Came here");
 }
     }
     
