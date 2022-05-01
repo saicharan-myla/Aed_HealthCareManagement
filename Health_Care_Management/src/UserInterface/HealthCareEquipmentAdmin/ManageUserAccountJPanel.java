@@ -92,7 +92,6 @@ populateOrganizationCMBbox();
         });
 
         headerLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        headerLbl.setForeground(new java.awt.Color(0, 102, 102));
         headerLbl.setText("Manage User Account");
 
         empLbl.setText("Employee      :");
