@@ -4,6 +4,7 @@
  */
 package UserInterface.SystemAdminWorkArea;
 
+import Code.Directory_Address;
 import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
@@ -27,12 +28,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
       private JPanel upperConatiner;
       private EcoSystem eco;
-      private AddressList addresslist;
+      private Directory_Address addresslist;
     public ManageEnterpriseJPanel(JPanel userContainer,EcoSystem eco) {
         initComponents();
-    this.upperConatiner = userContainer;
+        this.upperConatiner = userContainer;
         this.eco = eco;
-        addressList=new AddressList();
+        addresslist =new Directory_Address();
         populateTable();
         populateComboBox();
         
@@ -198,8 +199,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         }
         EnterPrise enterprise = network.getDirectoEnterpri().AddEnterPrise(name, type);
-        Address a= addressList.AddAddress();
-        a.setEnterpriseName(textf1.getText());
+          Code.Address adr = addresslist.insertAddress();
+// adr address doesnot hace setEnterprise
+        adr.setEnterpriseName(textf1.getText());
 
         populateTable();        // TODO add your handling code here:
     }//GEN-LAST:event_BtnSubmitActionPerformed

@@ -4,6 +4,7 @@
  */
 package UserInterface.SystemAdminWorkArea;
 
+import Code.Directory_Address;
 import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
@@ -26,12 +27,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
      */
 JPanel userContainer;
 EcoSystem eco;
-private AddressList addresslist;
+private Directory_Address addresslist;
     public SystemAdminWorkAreaJPanel(JPanel userContainer, EcoSystem eco) {
         initComponents();
-this.userContainer = userContainer;
-this.eco =eco;
-populateTreewithData();
+        this.userContainer = userContainer;
+        this.eco =eco;
+        populateTreewithData();
     }
 
     /**
@@ -128,7 +129,7 @@ populateTreewithData();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnManageNETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnManageNETActionPerformed
-        ManageNetworkJPanel manageNtwrkJPnl = new ManageNetworkJPanel(userContainer,system);
+        ManageNetworkJPanel manageNtwrkJPnl = new ManageNetworkJPanel(userContainer,eco);
         userContainer.add("manageNtwrkJPnl",manageNtwrkJPnl);
         CardLayout crdlyt = (CardLayout) userContainer.getLayout();
         crdlyt.next(userContainer);
@@ -136,7 +137,7 @@ populateTreewithData();
     }//GEN-LAST:event_BtnManageNETActionPerformed
 
     private void BTNEnterPriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNEnterPriseActionPerformed
-        ManageEnterpiseJPanel mngEntJPanel = new  ManageEnterpiseJPanel(userContainer, system);
+        ManageEnterpiseJPanel mngEntJPanel = new  ManageEnterpiseJPanel(userContainer, eco);
         userContainer.add("mngEntJPanel", mngEntJPanel);
         CardLayout crdlyt = (CardLayout) userContainer.getLayout();
         crdlyt.next(userContainer);
@@ -144,7 +145,7 @@ populateTreewithData();
     }//GEN-LAST:event_BTNEnterPriseActionPerformed
 
     private void BTNEnterPriseAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNEnterPriseAdminActionPerformed
-        ManageEnterpriseAdminJPanel manageAdminJPnl = new ManageEnterpriseAdminJPanel(userContainer,system);
+        ManageEnterpriseAdminJPanel manageAdminJPnl = new ManageEnterpriseAdminJPanel(userContainer,eco);
         userContainer.add("manageNtwrkJPnl",manageAdminJPnl);
         CardLayout crdlyt = (CardLayout) userContainer.getLayout();
         crdlyt.next(userContainer);        // TODO add your handling code here:
