@@ -13,24 +13,24 @@ import Code.WorkQueue.WorkRequest;
  * @author sanjana
  */
 public class TransportationWorkRequest  extends WorkRequest {
-    private String senderName;
+    private String Nameofsender;
     private String time;
     private String timezone;
-    private String vehicleNumber;
+    private String Numberofvehicle;
     private String hospitalName;
-    private String message;
-    private String urgency;
-    private String equipmentinfo;
-    private int uniqueId;
+    private String text;
+    private String urgent;
+    private String equipmentinformation;
+    private int uniqueIdentity;
     private static int count=11001;
     private int requestId;
 
     public String getSenderName() {
-        return senderName;
+        return Nameofsender;
     }
 
     public void setSenderName(String senderName) {
-        this.senderName = senderName;
+        this.Nameofsender = senderName;
     }
 
     public String getTime() {
@@ -50,11 +50,11 @@ public class TransportationWorkRequest  extends WorkRequest {
     }
 
     public String getVehicleNumber() {
-        return vehicleNumber;
+        return Numberofvehicle;
     }
 
     public void setVehicleNumber(String vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
+        this.Numberofvehicle = vehicleNumber;
     }
 
     public String getHospitalName() {
@@ -66,35 +66,35 @@ public class TransportationWorkRequest  extends WorkRequest {
     }
 
     public String getMessage() {
-        return message;
+        return text;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.text = message;
     }
 
     public String getUrgency() {
-        return urgency;
+        return urgent;
     }
 
     public void setUrgency(String urgency) {
-        this.urgency = urgency;
+        this.urgent = urgency;
     }
 
     public String getEquipmentinfo() {
-        return equipmentinfo;
+        return equipmentinformation;
     }
 
     public void setEquipmentinfo(String equipmentinfo) {
-        this.equipmentinfo = equipmentinfo;
+        this.equipmentinformation= equipmentinfo;
     }
 
     public int getUniqueId() {
-        return uniqueId;
+        return uniqueIdentity;
     }
 
     public void setUniqueId(int uniqueId) {
-        this.uniqueId = uniqueId;
+        this.uniqueIdentity = uniqueId;
     }
 
     public static int getCount() {
@@ -122,7 +122,7 @@ public class TransportationWorkRequest  extends WorkRequest {
     
     @Override
     public String toString(){
-        return this.senderName;
+        return this.Nameofsender;
     }
     
     
