@@ -1,4 +1,4 @@
-/*
+git /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -11,22 +11,22 @@ import java.util.Date;
 
 /**
  *
- * @author 16176
+ * @author sanjana
  */
 public class WorkRequest {
-    private String message;
+    private String text;
     private Account sender;
-    private Account receiver;
+    private Account receiving;
     private String status;
-    private String requestDate;
-    private Date resolveDate;
+    private String requestingDate;
+    private Date resolvingDate;
 
     public String getMessage() {
-        return message;
+        return text;
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        this.text = message;
     }
 
     public Account getSender() {
@@ -38,11 +38,11 @@ public class WorkRequest {
     }
 
     public Account getReceiver() {
-        return receiver;
+        return receiving;
     }
 
     public void setReceiver(Account receiver) {
-        this.receiver = receiver;
+        this.receiving = receiver;
     }
 
     public String getStatus() {
@@ -54,24 +54,24 @@ public class WorkRequest {
     }
 
     public String getRequestDate() {
-        return requestDate;
+        return requestingDate;
     }
 
     public void setRequestDate(String requestDate) {
-        this.requestDate = requestDate;
+        this.requestingDate = requestDate;
     }
 
     public Date getResolveDate() {
-        return resolveDate;
+        return resolvingDate;
     }
 
     public void setResolveDate(Date resolveDate) {
-        this.resolveDate = resolveDate;
+        this.resolvingDate = resolveDate;
     }
     
     @Override
     public String toString(){
-        return this.message;
+        return this.text;
     }
     
     
