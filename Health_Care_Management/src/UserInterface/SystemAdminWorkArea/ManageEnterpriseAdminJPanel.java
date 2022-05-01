@@ -9,8 +9,12 @@ import Code.EcoSystem;
 import Code.Employee;
 import Code.EnterPrise;
 import Code.Network;
+import Code.Role.Role_Admin;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,9 +28,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 private JPanel userConatiner;
 private EcoSystem eco;
 
-    public ManageEnterpriseAdminJPanel() {
+    public ManageEnterpriseAdminJPanel(JPanel userContainer, EcoSystem eco) {
         initComponents();
-       this.userConatiner = userConatiner;
+       this.userConatiner = userContainer;
    this.eco = eco;
    populateTable();
 populateNetworkComnBox();
@@ -209,13 +213,13 @@ populateNetworkComnBox();
     }//GEN-LAST:event_JtextUserActionPerformed
 
     private void BtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBackActionPerformed
-        userProcessContainer.remove(this);
-        Component[] cmpArray = userProcessContainer.getComponents();
+        userConatiner.remove(this);
+        Component[] cmpArray = userConatiner.getComponents();
         Component component = cmpArray[cmpArray.length-1];
         SystemAdminWorkAreaJPanel sysWAJP = (SystemAdminWorkAreaJPanel) component;
-        sysWAJP.populateTree();
-        CardLayout card = (CardLayout) userProcessContainer.getLayout();
-        card.previous(userProcessContainer);
+        sysWAJP.populateTreewithData();
+        CardLayout card = (CardLayout) userConatiner.getLayout();
+        card.previous(userConatiner);
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnBackActionPerformed
 
@@ -231,7 +235,7 @@ populateNetworkComnBox();
             }
         }
         Employee employee = ent.getEmpDir().AddEmployee(name);
-        Account ua = ent.getUserAccDir().createUserAccount(username, password, employee, new AdminRole());
+        Account ua = ent.getUserAccDir().createUserAccount(username, password, employee, new Role_Admin());
         populateTable();// TODO add your handling code here:
     }//GEN-LAST:event_BtnSubmitActionPerformed
 
@@ -249,6 +253,7 @@ populateNetworkComnBox();
     }//GEN-LAST:event_ComenterActionPerformed
 
 
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBack;
     private javax.swing.JButton BtnSubmit;
@@ -268,12 +273,42 @@ populateNetworkComnBox();
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+ // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
+model.setRowCount(0);
+for(Network ntw : eco.getNetworks()){
+    for(EnterPrise ent : ntw.getDirectoEnterpri().getEnterpList()){
+        for(Account ua : ent.getUserAccDir().getAccountList()){
+            Object[] row = new Object[3];
+            row[0] = ent.getOrgName();
+            row[1]= ntw.getNetwork_Name();
+            row[2] = ua.getUsrnm();
+            model.addRow(row);
+        }
     }
+}    }
 
     private void populateNetworkComnBox() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+ // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+  ComNet.removeAllItems();
+        for (Network network : eco.getNetworks()){
+            ComNet.addItem(network);
+        }
+
+
     }
+
+    private void populateEnterpriseComboBox(Network network) {
+         // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+Comenter.removeAllItems();
+    for(EnterPrise enterprise : network.getDirectoEnterpri().getEnterpList()){
+     Comenter.addItem(enterprise);
+}
+    }
+    
 
 
 }
