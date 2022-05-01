@@ -163,7 +163,7 @@ private Directory_Address addresslist;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTreewithData() {
+    public void populateTreewithData() {
         // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
       DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
 
