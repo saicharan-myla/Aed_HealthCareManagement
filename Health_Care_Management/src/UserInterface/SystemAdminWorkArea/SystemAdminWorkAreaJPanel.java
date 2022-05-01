@@ -137,7 +137,7 @@ private Directory_Address addresslist;
     }//GEN-LAST:event_BtnManageNETActionPerformed
 
     private void BTNEnterPriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNEnterPriseActionPerformed
-        ManageEnterpiseJPanel mngEntJPanel = new  ManageEnterpiseJPanel(userContainer, eco);
+        ManageEnterpriseAdminJPanel mngEntJPanel = new ManageEnterpriseAdminJPanel(userContainer, eco);
         userContainer.add("mngEntJPanel", mngEntJPanel);
         CardLayout crdlyt = (CardLayout) userContainer.getLayout();
         crdlyt.next(userContainer);

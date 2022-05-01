@@ -201,7 +201,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         EnterPrise enterprise = network.getDirectoEnterpri().AddEnterPrise(name, type);
           Code.Address adr = addresslist.insertAddress();
 // adr address doesnot hace setEnterprise
-        adr.setEnterpriseName(textf1.getText());
+        adr.setName(textf1.getText());
 
         populateTable();        // TODO add your handling code here:
     }//GEN-LAST:event_BtnSubmitActionPerformed
