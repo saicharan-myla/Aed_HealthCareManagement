@@ -50,6 +50,8 @@ private JPanel uppercontainer;
         btnOrg = new javax.swing.JButton();
         head = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jtable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},

@@ -115,6 +115,8 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         scrollPane2 = new javax.swing.JScrollPane();
         tblDoc = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

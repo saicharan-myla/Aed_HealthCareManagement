@@ -60,6 +60,8 @@ populateOrganizationCMBbox();
         jScrollPane1 = new javax.swing.JScrollPane();
         userTbl = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         pwdText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwdTextActionPerformed(evt);

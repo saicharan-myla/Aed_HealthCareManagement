@@ -63,6 +63,8 @@ populateNetworkComnBox();
         enterpriseLbl = new javax.swing.JLabel();
         Comenter = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         usernameLbl.setText("Username:");
 
         JtextUser.addActionListener(new java.awt.event.ActionListener() {

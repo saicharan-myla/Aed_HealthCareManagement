@@ -53,6 +53,8 @@ private EcoSystem eco;
         BtnNotify = new javax.swing.JButton();
         trpaLbl = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         etdLbl.setText("Expected Time Of Delivery :");
 
         Timecombox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00" }));

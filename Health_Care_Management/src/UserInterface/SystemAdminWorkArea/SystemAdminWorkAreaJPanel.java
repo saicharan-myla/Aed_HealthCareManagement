@@ -53,6 +53,8 @@ private Directory_Address addresslist;
         BTNEnterPriseAdmin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jPanel2.add(jScrollPane1);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("System");

@@ -42,8 +42,9 @@ jlbl2.setText(enter.getOrgName());
         ManageEmployeeBtn = new javax.swing.JButton();
         ManageUserBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         Header.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        Header.setForeground(new java.awt.Color(0, 102, 102));
         Header.setText("MY Work Area - Administrative Role");
 
         jlbl1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N

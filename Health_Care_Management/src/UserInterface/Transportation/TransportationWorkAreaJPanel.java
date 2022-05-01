@@ -54,6 +54,8 @@ private EcoSystem eco;
         BTNB = new javax.swing.JButton();
         BTnA = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         Btnprocessreq.setText("Process request");
         Btnprocessreq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

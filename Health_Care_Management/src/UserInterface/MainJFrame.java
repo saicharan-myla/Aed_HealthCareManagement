@@ -57,6 +57,7 @@ public class MainJFrame extends javax.swing.JFrame {
         containerPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 255));
 
         splitPane.setDividerLocation(150);
 
