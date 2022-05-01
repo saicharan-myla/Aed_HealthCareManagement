@@ -60,6 +60,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setDividerLocation(150);
 
+        loginPanel.setBackground(new java.awt.Color(153, 153, 255));
+
+        lblUsername.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblUsername.setText("Username");
 
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +71,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        lblPassword.setFont(new java.awt.Font("Nirmala UI", 0, 18)); // NOI18N
         lblPassword.setText("Password");
 
         btnLogin.setText("Login");
@@ -120,7 +124,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnLogout)
                 .addGap(12, 12, 12)
                 .addComponent(lblImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(loginPanel);

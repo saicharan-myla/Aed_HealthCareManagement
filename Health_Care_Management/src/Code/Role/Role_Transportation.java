@@ -10,6 +10,7 @@ import Code.EnterPrise;
 import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
+import UserInterface.Transportation.TransportationWorkAreaJPanel;
 
 /**
  *
