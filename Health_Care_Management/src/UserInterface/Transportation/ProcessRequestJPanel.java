@@ -89,7 +89,6 @@ private EcoSystem eco;
         });
 
         trpaLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        trpaLbl.setForeground(new java.awt.Color(0, 102, 102));
         trpaLbl.setText("TRANSPORT REQUEST PROCESS AREA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
