@@ -15,9 +15,9 @@ public class OperationsWorkRequest extends WorkRequest {
     private String equipmentName;
     private String expectedArrivalTime;
     private String urgencyLevel;
-    private String availability;
+    private String available;
     private String status;
-    private String medicationName;
+    private String medsName;
     private Account sender;
     private Account receiver;
     private Date requestDate;
@@ -48,11 +48,11 @@ public class OperationsWorkRequest extends WorkRequest {
     }
 
     public String getAvailability() {
-        return availability;
+        return available;
     }
 
     public void setAvailability(String availability) {
-        this.availability = availability;
+        this.available = availability;
     }
 
     public String getStatus() {
@@ -64,11 +64,11 @@ public class OperationsWorkRequest extends WorkRequest {
     }
 
     public String getMedicationName() {
-        return medicationName;
+        return medsName;
     }
 
     public void setMedicationName(String medicationName) {
-        this.medicationName = medicationName;
+        this.medsName = medicationName;
     }
 
     public Account getSender() {
@@ -99,7 +99,7 @@ public class OperationsWorkRequest extends WorkRequest {
     
     @Override
     public String toString(){
-        return this.medicationName;
+        return this.medsName;
     }
    
     
