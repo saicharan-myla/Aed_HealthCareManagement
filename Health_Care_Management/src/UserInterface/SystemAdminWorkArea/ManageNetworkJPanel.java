@@ -78,7 +78,6 @@ populateNetworkTable();
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Manage Network");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

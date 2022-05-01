@@ -90,7 +90,6 @@ public class WorkAreaPanel_Supplier extends javax.swing.JPanel {
         });
 
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("SUPPLIER WORK AREA ");
 

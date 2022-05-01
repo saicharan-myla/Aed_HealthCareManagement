@@ -76,7 +76,6 @@ private Account acc;
         });
 
         MainLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        MainLabel.setForeground(new java.awt.Color(0, 102, 102));
         MainLabel.setText("VIEW TRANSPORTATION WORK REQUEST STATUS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

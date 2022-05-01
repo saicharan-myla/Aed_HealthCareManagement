@@ -44,7 +44,6 @@ public class ManageWorkRequestPanel_Supplier extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 204, 255));
 
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setText("PROCESSING SUPPLIER REQUEST");
 
         lblDate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

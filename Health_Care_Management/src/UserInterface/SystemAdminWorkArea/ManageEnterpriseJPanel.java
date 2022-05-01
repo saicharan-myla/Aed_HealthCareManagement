@@ -94,7 +94,6 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
 
         MainLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        MainLabel.setForeground(new java.awt.Color(0, 102, 102));
         MainLabel.setText("Manage Enterprise");
 
         nameTbl.setModel(new javax.swing.table.DefaultTableModel(

@@ -64,7 +64,6 @@ private EcoSystem eco;
         });
 
         mainlbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        mainlbl.setForeground(new java.awt.Color(0, 102, 102));
         mainlbl.setText("TRNSPORTATION WORK AREA");
 
         workreqTble.setModel(new javax.swing.table.DefaultTableModel(

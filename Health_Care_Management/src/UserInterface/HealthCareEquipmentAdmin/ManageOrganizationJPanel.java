@@ -105,7 +105,6 @@ private JPanel uppercontainer;
         });
 
         head.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        head.setForeground(new java.awt.Color(0, 102, 102));
         head.setText("Manage Organization");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
