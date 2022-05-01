@@ -40,60 +40,60 @@ public class HealthcareEquipmentWorkRequest extends WorkRequest {
     }
 
     public void setEquipmentName(String equipmentName) {
-        this.equipmentName = equipmentName;
+        this.equipment_Name = equipmentName;
     }
 
     public String getExpectedArrivalTime() {
-        return expectedArrivalTime;
+        return expectedArrival_Time;
     }
 
     public void setExpectedArrivalTime(String expectedArrivalTime) {
-        this.expectedArrivalTime = expectedArrivalTime;
+        this.expectedArrival_Time = expectedArrivalTime;
     }
 
     public String getUrgencyLevel() {
-        return urgencyLevel;
+        return urgency_Level;
     }
 
     public void setUrgencyLevel(String urgencyLevel) {
-        this.urgencyLevel = urgencyLevel;
+        this.urgency_Level = urgencyLevel;
     }
 
     public String getHospitalName() {
-        return hospitalName;
+        return hospita_lName;
     }
 
     public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
+        this.hospita_lName = hospitalName;
     }
 
     public int getQuantity() {
-        return quantity;
+        return quantity_1;
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        this.quantity_1 = quantity;
     }
 
     public String getNetwork() {
-        return network;
+        return network_1;
     }
 
     public void setNetwork(String network) {
-        this.network = network;
+        this.network_1 = network;
     }
 
     public String getTransportrequestStatus() {
-        return transportrequestStatus;
+        return transport_requestStatus;
     }
 
     public void setTransportrequestStatus(String transportrequestStatus) {
-        this.transportrequestStatus = transportrequestStatus;
+        this.transport_requestStatus = transportrequestStatus;
     }
     
     @Override
     public String toString(){
-        return this.equipmentName;
+        return this.equipment_Name;
     }
     
 }
