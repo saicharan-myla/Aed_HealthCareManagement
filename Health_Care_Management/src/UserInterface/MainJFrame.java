@@ -129,7 +129,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setLeftComponent(loginPanel);
 
-        containerPanel.setLayout(new java.awt.BorderLayout());
+        containerPanel.setLayout(new java.awt.CardLayout());
         splitPane.setRightComponent(containerPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
