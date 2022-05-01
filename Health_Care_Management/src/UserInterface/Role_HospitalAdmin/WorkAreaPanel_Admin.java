@@ -43,8 +43,9 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
         btnMngEmp = new javax.swing.JButton();
         BtnMngUsr = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("Hospital Work Area - Administrative Role");
 
@@ -53,6 +54,7 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
         lblEnt.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblEnt.setText("Enterprise : ");
 
+        btnOrgMng.setBackground(new java.awt.Color(153, 153, 153));
         btnOrgMng.setText("Manage Organization");
         btnOrgMng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,6 +62,7 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
             }
         });
 
+        btnMngEmp.setBackground(new java.awt.Color(153, 153, 153));
         btnMngEmp.setText("Manage Employee");
         btnMngEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +70,7 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
             }
         });
 
+        BtnMngUsr.setBackground(new java.awt.Color(153, 153, 153));
         BtnMngUsr.setText("Manage User");
         BtnMngUsr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

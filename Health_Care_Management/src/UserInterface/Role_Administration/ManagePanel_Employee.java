@@ -77,6 +77,7 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblOrganization.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -92,8 +93,8 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
         add(cmbOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 112, 168, 29));
 
         lblOrganization2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblOrganization2.setText("Organization:");
-        add(lblOrganization2, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 442, -1, -1));
+        lblOrganization2.setText("Organization");
+        add(lblOrganization2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, -1, -1));
 
         cmbOrg2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbOrg2.addActionListener(new java.awt.event.ActionListener() {
@@ -101,12 +102,12 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
                 cmbOrg2ActionPerformed(evt);
             }
         });
-        add(cmbOrg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 442, 107, 29));
+        add(cmbOrg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 440, 140, 29));
 
         lblName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 489, 143, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 489, 110, 29));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 143, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, 110, 29));
 
         tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -133,13 +134,13 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
         });
         scrollPane.setViewportView(tblEmployee);
 
-        add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 354, 206));
+        add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 170, 600, 206));
 
         lblHeading.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblHeading.setForeground(new java.awt.Color(0, 102, 102));
         lblHeading.setText("Manage Employee");
         add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 9, -1, -1));
 
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -147,8 +148,9 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 562, 143, 101));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 581, 143, 70));
 
+        btnCreate.setBackground(new java.awt.Color(153, 153, 153));
         btnCreate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnCreate.setText("Create Employee");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +158,7 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 562, 239, 101));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 581, 239, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrgActionPerformed

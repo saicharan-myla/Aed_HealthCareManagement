@@ -65,8 +65,9 @@ public class EntryPanel_Update extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("Update Details");
 
@@ -79,6 +80,7 @@ public class EntryPanel_Update extends javax.swing.JPanel {
         lblAvail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblAvail.setText("Availability:");
 
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBack.setText("<<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +89,7 @@ public class EntryPanel_Update extends javax.swing.JPanel {
             }
         });
 
+        btnSave.setBackground(new java.awt.Color(153, 153, 153));
         btnSave.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +98,7 @@ public class EntryPanel_Update extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(153, 153, 153));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +129,7 @@ public class EntryPanel_Update extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addContainerGap()
                                         .addComponent(btnBack)
-                                        .addGap(110, 110, 110)))
+                                        .addGap(117, 117, 117)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtSerialNum, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
@@ -133,9 +137,9 @@ public class EntryPanel_Update extends javax.swing.JPanel {
                                         .addComponent(txtAvail))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(79, 79, 79)
+                                        .addGap(95, 95, 95)
                                         .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 295, Short.MAX_VALUE))
+                        .addGap(0, 279, Short.MAX_VALUE))
                     .addComponent(lblHeader, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
