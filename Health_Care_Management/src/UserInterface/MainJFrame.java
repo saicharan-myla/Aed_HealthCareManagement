@@ -202,6 +202,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
 // TODO add your handling code here:
         if (acc != null) {
+//error casting
             CardLayout layout = (CardLayout) containerPanel.getLayout();
             containerPanel.add(acc.getRole().toString() + "workArea", acc.getRole().createWorkArea(containerPanel, acc, orgz, ent, eco, net));
             layout.next(containerPanel);

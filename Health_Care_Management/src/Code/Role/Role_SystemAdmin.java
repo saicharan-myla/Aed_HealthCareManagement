@@ -4,11 +4,13 @@
  */
 package Code.Role;
 
+import Code.Account;
 import Code.EcoSystem;
 import Code.EnterPrise;
 import javax.swing.JPanel;
 import Code.Network;
 import Code.Organization.Organization;
+import UserInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
 /**
  *
@@ -16,7 +18,7 @@ import Code.Organization.Organization;
  */
 public class Role_SystemAdmin extends Role {
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EnterPrise enterprise, EcoSystem system,Network network) {
+    public JPanel createWorkArea(JPanel userProcessContainer, Account account, Organization organization, EnterPrise enterprise, EcoSystem system,Network network) {
         return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
     }
 
