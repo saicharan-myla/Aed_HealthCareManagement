@@ -61,6 +61,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         nameTbl = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         networkLbl.setText("Network:");
 
         CmbNetk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

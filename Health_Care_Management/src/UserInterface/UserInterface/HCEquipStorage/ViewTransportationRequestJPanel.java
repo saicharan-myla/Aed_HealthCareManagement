@@ -47,6 +47,8 @@ private Account acc;
         jButton2 = new javax.swing.JButton();
         MainLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

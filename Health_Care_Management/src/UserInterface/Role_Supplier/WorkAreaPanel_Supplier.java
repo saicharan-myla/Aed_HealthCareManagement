@@ -71,6 +71,8 @@ public class WorkAreaPanel_Supplier extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnAssign = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         btnPro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnPro.setText("Process");
         btnPro.addActionListener(new java.awt.event.ActionListener() {

@@ -53,6 +53,8 @@ populateOrgEmpBox();
         orgLbl = new javax.swing.JLabel();
         orgCmbBox = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -110,7 +112,6 @@ populateOrgEmpBox();
         });
 
         MainLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        MainLabel.setForeground(new java.awt.Color(0, 102, 102));
         MainLabel.setText("Manage Employee");
 
         orgLbl.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N

@@ -49,6 +49,8 @@ populateNetworkTable();
         submitBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         nameTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
