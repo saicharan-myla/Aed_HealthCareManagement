@@ -178,7 +178,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         Component[] cmpArray = upperConatiner.getComponents();
         Component component= cmpArray[cmpArray.length-1];
         SystemAdminWorkAreaJPanel sysAdmin = (SystemAdminWorkAreaJPanel) component;
-        sysAdmin.populateTree();
+        sysAdmin.populateTreewithData();
         CardLayout crd = (CardLayout) upperConatiner.getLayout();
         crd.previous(upperConatiner);// TODO add your handling code here:
     }//GEN-LAST:event_BtnBackActionPerformed

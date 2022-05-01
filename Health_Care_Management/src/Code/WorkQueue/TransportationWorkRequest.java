@@ -117,7 +117,7 @@ public class TransportationWorkRequest  extends WorkRequest {
     
     public TransportationWorkRequest(){
         count++;
-        uniqueId=count;
+        uniqueIdentity=count;
     }
     
     @Override
