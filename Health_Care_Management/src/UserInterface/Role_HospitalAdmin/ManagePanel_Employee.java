@@ -8,6 +8,7 @@ import Code.Employee;
 import Code.Organization.Directory_Organization;
 import Code.Organization.Organization;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,6 +26,9 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
      */
     public ManagePanel_Employee(JPanel p, Directory_Organization od) {
         initComponents();
+
+    this.dirOrg =  od;
+this.panel = p ;
         fillCmbOrg();
         fillCmbEmp();
     }
@@ -229,7 +233,10 @@ public class ManagePanel_Employee extends javax.swing.JPanel {
         Organization o = (Organization) cmbOrg2.getSelectedItem();
         String s = txtName.getText();
 
-        o.getEmpDir().AddEmployee(s);        // TODO add your handling code here:
+        o.getEmpDir().AddEmployee(s); 
+         // TODO add your handling code here:
+       JOptionPane.showMessageDialog(this, "Employee added successfully");
+        fillRows(o);
     }//GEN-LAST:event_btnCreateActionPerformed
 
 
