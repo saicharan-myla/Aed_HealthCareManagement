@@ -6,7 +6,7 @@ package Code.WorkQueue;
 
 /**
  *
- * @author 16176
+ * @author sanjana
  */
 public class SupplierWorkRequest  extends WorkRequest {
     

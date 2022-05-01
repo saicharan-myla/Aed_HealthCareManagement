@@ -10,7 +10,7 @@ import Code.WorkQueue.WorkRequest;
 
 /**
  *
- * @author 16176
+ * @author sanjana
  */
 public class TransportationWorkRequest  extends WorkRequest {
     private String senderName;

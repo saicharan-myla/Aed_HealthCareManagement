@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author 16176
+ * @author sanjana
  */
 public class PharmacyWorkRequest extends WorkRequest {
     private String requestDate;
