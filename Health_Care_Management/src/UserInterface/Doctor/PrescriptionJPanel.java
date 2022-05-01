@@ -83,6 +83,8 @@ populateWorkReqTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("Name");
 
         jLabel2.setText("Age");
