@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author 16176
+ * @author sanjana
  */
 public class OperationsWorkRequest extends WorkRequest {
     private String equipmentName;
