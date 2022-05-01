@@ -10,16 +10,16 @@ package Code.WorkQueue;
  */
 public class SupplierWorkRequest  extends WorkRequest {
     
-    private String medicationName;
+    private String medsName;
     private int Quantity;
     private String deliveryTime;
 
     public String getMedicationName() {
-        return medicationName;
+        return medsName;
     }
 
     public void setMedicationName(String medicationName) {
-        this.medicationName = medicationName;
+        this.medsName = medicationName;
     }
 
     public int getQuantity() {
@@ -40,7 +40,7 @@ public class SupplierWorkRequest  extends WorkRequest {
     
     @Override
     public String toString(){
-        return this.medicationName;
+        return this.medsName;
     }
     
 }
