@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  *
- * @author 16176
+ * @author sanjana
  */
 public class WorkRequest {
     private String message;
