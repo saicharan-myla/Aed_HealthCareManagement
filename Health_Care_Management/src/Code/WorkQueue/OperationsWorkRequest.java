@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Schema.WorkQueue;
+package Code.WorkQueue;
 
-import Schema.UserAccount.UserAccount;
+import Code.Account;
 import java.util.Date;
 
 /**
@@ -18,8 +18,8 @@ public class OperationsWorkRequest extends WorkRequest {
     private String availability;
     private String status;
     private String medicationName;
-    private UserAccount sender;
-    private UserAccount receiver;
+    private Account sender;
+    private Account receiver;
     private Date requestDate;
     private int Quantity;
 
@@ -71,19 +71,19 @@ public class OperationsWorkRequest extends WorkRequest {
         this.medicationName = medicationName;
     }
 
-    public UserAccount getSender() {
+    public Account getSender() {
         return sender;
     }
 
-    public void setSender(UserAccount sender) {
+    public void setSender(Account sender) {
         this.sender = sender;
     }
 
-    public UserAccount getReceiver() {
+    public Account getReceiver() {
         return receiver;
     }
 
-    public void setReceiver(UserAccount receiver) {
+    public void setReceiver(Account receiver) {
         this.receiver = receiver;
     }
 
