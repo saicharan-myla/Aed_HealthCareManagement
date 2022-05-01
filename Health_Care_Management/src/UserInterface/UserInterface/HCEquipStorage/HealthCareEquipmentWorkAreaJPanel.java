@@ -101,7 +101,6 @@ populateHealthCareReqTbl();
         BtnRefresh.setText("Refresh");
 
         MainLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        MainLbl.setForeground(new java.awt.Color(0, 102, 102));
         MainLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MainLbl.setText("REQUESTS FROM HOSPITALS");
 
