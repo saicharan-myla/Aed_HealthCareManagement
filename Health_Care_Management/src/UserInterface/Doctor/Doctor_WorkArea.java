@@ -75,6 +75,8 @@ network();
         Pres_Button = new javax.swing.JButton();
         Manage_Equipment_Button = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         jLabel1.setText("Doctor Work Area");
 
         Pres_Button.setText("Precribe Medicine");
