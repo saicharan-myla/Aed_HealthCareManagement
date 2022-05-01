@@ -36,4 +36,9 @@ public Network(){
         this.directoEnterpri = directoEnterpri;
     }
 
+  @Override 
+ public String toString(){
+
+ return Network_Name;}
+
 }
