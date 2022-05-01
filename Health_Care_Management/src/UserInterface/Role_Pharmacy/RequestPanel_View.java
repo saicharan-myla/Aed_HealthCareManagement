@@ -76,6 +76,8 @@ public class RequestPanel_View extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 255));
+
         tblReq.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -87,9 +89,9 @@ public class RequestPanel_View extends javax.swing.JPanel {
         scrollPane.setViewportView(tblReq);
 
         lblHeader.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setText("VIEW REQUESTS");
 
+        btnBack.setBackground(new java.awt.Color(153, 153, 153));
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBack.setText("<<BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +100,7 @@ public class RequestPanel_View extends javax.swing.JPanel {
             }
         });
 
+        btnRefresh.setBackground(new java.awt.Color(153, 153, 153));
         btnRefresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnRefresh.setText("REFRESH");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
