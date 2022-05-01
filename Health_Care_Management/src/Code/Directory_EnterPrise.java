@@ -17,7 +17,7 @@ private ArrayList<EnterPrise> enterpList;
 
 public Directory_EnterPrise(){
 
-enterpList = new ArrayList();
+enterpList = new ArrayList<>();
 
 }
 
@@ -39,7 +39,7 @@ else if (type == EnterPrise.EntType.Supplier){
 
 }
 else if (type == EnterPrise.EntType.Logistics){
- enterprise = new TransportEnterPrise(name);
+ enterprise = new WholesaleEnterPrise(name);
     enterpList.add(enterprise);
 }
 else if (type == EnterPrise.EntType.MedicalEquiPantry){

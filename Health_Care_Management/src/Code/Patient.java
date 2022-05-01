@@ -11,7 +11,7 @@ package Code;
 public class Patient {
 
 
-private long PId;
+private int PId;
 private int PAge;
 private String PName;
 private String PGender;
@@ -34,11 +34,11 @@ private String PGender;
         this.PName = PName;
     }
 
- public long getPId() {
+ public int getPId() {
         return PId;
     }
 
-    public void setPId(long PId) {
+    public void setPId(int PId) {
         this.PId = PId;
     }
     

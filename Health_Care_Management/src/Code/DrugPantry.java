@@ -130,7 +130,8 @@ public class DrugPantry {
     public void setPurchasePrice(double purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
-
+   
+    @Override
     public String toString() {
         return this.drugName;
     }

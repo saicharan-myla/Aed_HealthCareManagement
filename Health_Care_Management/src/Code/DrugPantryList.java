@@ -12,12 +12,12 @@ import java.util.ArrayList;
  */
 public class DrugPantryList {
 
+    private ArrayList<DrugPantry> ListOfDrugs;
 
-private ArrayList<DrugPantry> ListOfDrugs;
-public DrugPantryList(){
-  ListOfDrugs = new ArrayList();
+    public DrugPantryList() {
+        ListOfDrugs = new ArrayList<>();
 
-}
+    }
 
     public ArrayList<DrugPantry> getListOfDrugs() {
         return ListOfDrugs;
@@ -26,16 +26,17 @@ public DrugPantryList(){
     public void setListOfDrugs(ArrayList<DrugPantry> ListOfDrugs) {
         this.ListOfDrugs = ListOfDrugs;
     }
- public DrugPantry AddDrug(){
-DrugPantry dp = new DrugPantry();
-ListOfDrugs.add(dp);
-return dp;
-}
 
-public  void removeDrug(DrugPantry dp1){
+    public DrugPantry AddDrug() {
+        DrugPantry dp = new DrugPantry();
+        ListOfDrugs.add(dp);
+        return dp;
+    }
 
-ListOfDrugs.remove(dp1);
+    public void removeDrug(DrugPantry dp1) {
 
-}
-    
+        ListOfDrugs.remove(dp1);
+
+    }
+
 }

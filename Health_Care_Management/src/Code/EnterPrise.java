@@ -13,56 +13,53 @@ import Code.Organization.Organization;
  */
 public abstract class EnterPrise extends Organization {
 
+    private EntType enterprise_type;
+    private Directory_Organization orgaDirectory;
+    private String Zip;
 
+    public EnterPrise(String Name, EntType type) {
 
-private EntType enterprise_type;
-private Directory_Organization orgaDirectory;
-private String Zip;
+        super(Name);
+        this.enterprise_type = type;
+        orgaDirectory = new Directory_Organization();
 
-    
-public enum EntType{
+    }
 
-Hospital("Hospital"),
-Supplier("Supplier"),
-Logistics("Logistics"),
-Pharmacy("Pharmacy"),
-MedicalEquiPantry("MedicalEquipPantry");
-private String value;
-private EntType(String value){
+    public enum EntType {
 
-this.value = value;
+        Hospital("Hospital"),
+        Supplier("Supplier"),
+        Logistics("Logistics"),
+        Pharmacy("Pharmacy"),
+        MedicalEquiPantry("MedicalEquipPantry");
+        private String value;
 
-}
+        private EntType(String value) {
 
-  public String getValue() {
-     return value;
-   }
+            this.value = value;
 
-@Override
+        }
 
-public String toString(){
+        public String getValue() {
+            return value;
+        }
 
-return value;
-}
+        @Override
 
-}
+        public String toString() {
 
-public EnterPrise(String Name, EntType type){
+            return value;
+        }
 
-super(Name);
-this.enterprise_type = type;
-orgaDirectory = new Directory_Organization();
-
-}
+    }
 
     public EntType getEnterprise_type() {
         return enterprise_type;
     }
 
-   /* public void setEnterprise_type(EntType enterprise_type) {
+    /* public void setEnterprise_type(EntType enterprise_type) {
         this.enterprise_type = enterprise_type;
     }*/
-
     public Directory_Organization getOrgaDirectory() {
         return orgaDirectory;
     }
@@ -70,7 +67,6 @@ orgaDirectory = new Directory_Organization();
     /*public void setOrgaDirectory(Directory_Organization orgaDirectory) {
         this.orgaDirectory = orgaDirectory;
     }*/
-
     public String getZip() {
         return Zip;
     }
@@ -79,14 +75,4 @@ orgaDirectory = new Directory_Organization();
         this.Zip = Zip;
     }
 
- 
-
-
-
-
-
-
-
-
-   
 }

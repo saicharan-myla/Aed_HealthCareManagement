@@ -11,22 +11,20 @@ import java.util.ArrayList;
  * @author saich
  */
 public class Directory_Employee {
-    
-public Directory_Employee(){
 
-E_List = new ArrayList();
-}
+    private ArrayList<Employee> E_List;
 
+    public Directory_Employee() {
 
-public Employee AddEmployee (String name){
-Employee emp = new Employee();
-emp.setEName(name);
-E_List.add(emp);
-return emp;
-}
+        E_List = new ArrayList<>();
+    }
 
-
-private ArrayList<Employee> E_List;
+    public Employee AddEmployee(String name) {
+        Employee emp = new Employee();
+        emp.setEName(name);
+        E_List.add(emp);
+        return emp;
+    }
 
     public ArrayList<Employee> getE_List() {
         return E_List;
@@ -35,6 +33,5 @@ private ArrayList<Employee> E_List;
     public void setE_List(ArrayList<Employee> E_List) {
         this.E_List = E_List;
     }
-
 
 }
