@@ -7,6 +7,8 @@ package UserInterface.SystemAdminWorkArea;
 import Code.EcoSystem;
 import Code.Network;
 import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -134,14 +136,16 @@ populateNetworkTable();
 
     private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
         String networkName = JTextF1.getText();
-        for (Network n: system.getNetworkList()) {
-            if (n.getName().equals(networkName)) {
+        for (Network n: eco.getNetworks()) {
+            if (n.getNetwork_Name().equals(networkName)) {
                 JOptionPane.showMessageDialog(this, "Can not insert copies.");
                 return;
             }
         }
-        Network network = system.createAndAddNetwork();
-        network.setName(networkName);
+
+//probable error;
+        Network network = eco.addBuildedNetwork();
+        network.setNetwork_Name(networkName);
         populateNetworkTable();// TODO add your handling code here:
     }//GEN-LAST:event_submitBtnActionPerformed
 
