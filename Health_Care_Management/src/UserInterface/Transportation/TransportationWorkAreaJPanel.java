@@ -64,6 +64,7 @@ private EcoSystem eco;
         });
 
         mainlbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        mainlbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/transport.png"))); // NOI18N
         mainlbl.setText("TRANSPORTATION WORK AREA");
 
         workreqTble.setModel(new javax.swing.table.DefaultTableModel(
@@ -119,7 +120,7 @@ private EcoSystem eco;
                         .addComponent(BtnRef, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(62, 62, 62)
                         .addComponent(Btnprocessreq)))
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
