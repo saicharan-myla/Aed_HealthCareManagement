@@ -104,6 +104,7 @@ populateNetworkComnBox();
             }
         });
 
+        BtnSubmit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/R.png"))); // NOI18N
         BtnSubmit.setText("Submit");
         BtnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
