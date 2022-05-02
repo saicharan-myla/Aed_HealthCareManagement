@@ -89,6 +89,7 @@ private EcoSystem eco;
         });
 
         trpaLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        trpaLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/transport.png"))); // NOI18N
         trpaLbl.setText("TRANSPORT REQUEST PROCESS AREA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -110,7 +111,7 @@ private EcoSystem eco;
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(Timecombox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(AMPMCmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(AMPMCmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(JText1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
@@ -138,7 +139,7 @@ private EcoSystem eco;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(BtnNotify)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
