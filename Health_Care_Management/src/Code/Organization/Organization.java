@@ -31,7 +31,7 @@ public abstract class Organization {
     public enum OrganizationType {
         Admin("Admin Organization"), Doctor("Doctor Organization"), Operations("Operations Organization"),
         Pharmacy("Pharmacy Organization"), Supplier("Supplier Organization"), MedicalEquipment("Equipment Organization"),
-        Transport("Transportation Organization"), Staff ("Staff Role");
+        Transport("Transportation Organization"), Staff ("Staff Role"), MedicalWaste("Waste Organization");
 
         private String v;
 

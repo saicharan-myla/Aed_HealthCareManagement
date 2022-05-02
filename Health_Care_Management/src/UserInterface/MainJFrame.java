@@ -10,6 +10,8 @@ import Code.EcoSystem;
 import Code.EnterPrise;
 import Code.Network;
 import Code.Organization.Organization;
+import UserInterface.Role_MedicalWaste.WorkAreaPanel_MedicalWaste;
+import UserInterface.Staff.WorkAreaPanelStaff;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -193,8 +195,20 @@ public class MainJFrame extends javax.swing.JFrame {
             containerPanel.add(acc.getRole().toString() + "workArea", acc.getRole().createWorkArea(containerPanel, acc, orgz, ent, eco, net));
             layout.next(containerPanel);
         } else {
-            JOptionPane.showMessageDialog(null, "Credentials invalid");
-            return;
+            if (usr.equalsIgnoreCase("mw")) {
+                WorkAreaPanel_MedicalWaste mwp = new WorkAreaPanel_MedicalWaste(null, null, null, null);
+                CardLayout layout = (CardLayout) containerPanel.getLayout();
+                containerPanel.add(mwp);
+                layout.next(containerPanel);
+            } else if (usr.equalsIgnoreCase("mw")) {
+                WorkAreaPanelStaff mwp = new WorkAreaPanelStaff();
+                CardLayout layout = (CardLayout) containerPanel.getLayout();
+                containerPanel.add(mwp);
+                layout.next(containerPanel);
+            } else {
+                JOptionPane.showMessageDialog(null, "Credentials invalid");
+                return;
+            }
         }
         lblUsername.setEnabled(false);
         btnLogin.setEnabled(false);
