@@ -62,6 +62,7 @@ populateHealthCareReqTbl();
         MainLbl = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setMinimumSize(new java.awt.Dimension(900, 665));
@@ -131,6 +132,10 @@ populateHealthCareReqTbl();
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 909, 279));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/steth.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 50, 170, 160));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BTNAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNAssignmentActionPerformed
@@ -227,6 +232,7 @@ populateHealthCareReqTbl();
     private javax.swing.JLabel MainLbl;
     private javax.swing.JButton ProcessRequestBTN;
     private javax.swing.JButton ViewReqStatusBTn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
