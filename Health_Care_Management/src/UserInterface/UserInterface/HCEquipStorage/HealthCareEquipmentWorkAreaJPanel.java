@@ -247,7 +247,7 @@ populateHealthCareReqTbl();
             row[2]=quantity;
             row[3]=request.getSender().getUsrnm();
             
-            row[4]=request.getReceiver().getUsrnm();
+//            row[4]=request.getReceiver().getUsrnm();
             
             model.addRow(row);
         }
