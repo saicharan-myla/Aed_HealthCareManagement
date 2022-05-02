@@ -77,6 +77,7 @@ populateOrganizationCMBbox();
 
         orgLbl.setText("Organization  :");
 
+        createuserBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
         createuserBtn.setText("Create");
         createuserBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +210,7 @@ populateOrganizationCMBbox();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createuserBtn)
                     .addComponent(backBtn))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
