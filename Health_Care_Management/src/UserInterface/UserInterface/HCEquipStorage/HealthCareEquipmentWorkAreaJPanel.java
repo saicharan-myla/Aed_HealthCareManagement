@@ -64,6 +64,8 @@ populateHealthCareReqTbl();
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(204, 204, 255));
+        setMinimumSize(new java.awt.Dimension(900, 665));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BTNAssignment.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BTNAssignment.setText("ASSIGN TO ME");
@@ -72,6 +74,7 @@ populateHealthCareReqTbl();
                 BTNAssignmentActionPerformed(evt);
             }
         });
+        add(BTNAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 167, 43));
 
         Btnback.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Btnback.setText("<<Back");
@@ -80,6 +83,7 @@ populateHealthCareReqTbl();
                 BtnbackActionPerformed(evt);
             }
         });
+        add(Btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 105, 43));
 
         ProcessRequestBTN.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ProcessRequestBTN.setText("PROCESS REQUEST>>>");
@@ -88,6 +92,7 @@ populateHealthCareReqTbl();
                 ProcessRequestBTNActionPerformed(evt);
             }
         });
+        add(ProcessRequestBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 257, 43));
 
         ViewReqStatusBTn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ViewReqStatusBTn.setText("VIEW REQUEST STATUS>>");
@@ -96,13 +101,16 @@ populateHealthCareReqTbl();
                 ViewReqStatusBTnActionPerformed(evt);
             }
         });
+        add(ViewReqStatusBTn, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 470, -1, 43));
 
         BtnRefresh.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BtnRefresh.setText("Refresh");
+        add(BtnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, 36));
 
         MainLbl.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         MainLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MainLbl.setText("REQUESTS FROM HOSPITALS");
+        add(MainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, -10, 648, 113));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,52 +130,7 @@ populateHealthCareReqTbl();
         });
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(488, 488, 488)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 909, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(591, 591, 591)
-                        .addComponent(MainLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(459, 459, 459)
-                        .addComponent(Btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92)
-                        .addComponent(BTNAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(317, 317, 317)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ViewReqStatusBTn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ProcessRequestBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(BtnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(ProcessRequestBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ViewReqStatusBTn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BTNAssignment, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(MainLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 909, 279));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BTNAssignmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNAssignmentActionPerformed
