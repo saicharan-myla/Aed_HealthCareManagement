@@ -118,6 +118,7 @@ public class ManagePanel_Organization extends javax.swing.JPanel {
         });
 
         btnOrgAdd.setBackground(new java.awt.Color(153, 153, 153));
+        btnOrgAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
         btnOrgAdd.setText("Add Organization");
         btnOrgAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
