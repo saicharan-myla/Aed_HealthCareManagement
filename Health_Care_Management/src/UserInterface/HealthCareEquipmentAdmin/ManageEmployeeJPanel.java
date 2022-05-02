@@ -104,6 +104,7 @@ populateOrgEmpBox();
             }
         });
 
+        BtnCreateEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
         BtnCreateEmployee.setText("Create Employee");
         BtnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
