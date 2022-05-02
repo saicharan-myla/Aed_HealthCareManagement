@@ -122,7 +122,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         lblHeader.setForeground(new java.awt.Color(0, 102, 102));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("PHARMACY MEDICINE INVENTORY LOG");
-        add(lblHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 26, 1069, -1));
+        add(lblHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1069, -1));
 
         tblPharmacy.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,7 +149,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         });
         scrollPane.setViewportView(tblPharmacy);
 
-        add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 88, 1025, 220));
+        add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 1025, 80));
 
         btnStatus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnStatus.setText("INVENTORY STATUS CHECK!");
@@ -158,32 +158,32 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnStatusActionPerformed(evt);
             }
         });
-        add(btnStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 326, 309, 38));
+        add(btnStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, 309, 38));
 
         lblSerialNumber.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblSerialNumber.setText("SERIAL NUMBER:");
-        add(lblSerialNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 398, 236, -1));
+        add(lblSerialNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 236, -1));
 
         lblMedicine.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblMedicine.setText("MEDICNE NAME:");
-        add(lblMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 439, 236, -1));
+        add(lblMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 236, -1));
 
         lblAvailableQuantity.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblAvailableQuantity.setText("AVAILABLE QUANTITY:");
-        add(lblAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 480, 236, -1));
+        add(lblAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 236, -1));
 
         lblReqQuantity.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblReqQuantity.setText("REQUIRED QUANTITY:");
-        add(lblReqQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 514, 236, -1));
+        add(lblReqQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 236, -1));
 
         lblReorder.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblReorder.setText("REORDER LEVEL:");
-        add(lblReorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 548, 236, -1));
-        add(txtSerialNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 398, 257, 25));
-        add(txtMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 439, 257, 25));
-        add(txtAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 471, 257, 25));
-        add(txtReqQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 514, 257, 25));
-        add(txtReorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 548, 257, 25));
+        add(lblReorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 236, -1));
+        add(txtSerialNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 257, 25));
+        add(txtMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 257, 25));
+        add(txtAvailableQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 257, 25));
+        add(txtReqQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 257, 25));
+        add(txtReorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, 257, 25));
 
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBack.setText("<<BACK");
@@ -192,7 +192,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 605, 138, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 138, -1));
 
         btnAddMedicine.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnAddMedicine.setText("ADD MEDICINE");
@@ -201,7 +201,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnAddMedicineActionPerformed(evt);
             }
         });
-        add(btnAddMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 605, 257, -1));
+        add(btnAddMedicine, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, 257, -1));
 
         btnDetails.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnDetails.setText("VIEW DETAILS >>");
@@ -210,7 +210,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnDetailsActionPerformed(evt);
             }
         });
-        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 398, 309, 38));
+        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, 309, 38));
 
         btnReqs.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnReqs.setText("VIEW REQUESTS");
@@ -219,16 +219,16 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
                 btnReqsActionPerformed(evt);
             }
         });
-        add(btnReqs, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 467, 309, 38));
+        add(btnReqs, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 309, 38));
 
         btnViewReq.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnViewReq.setText("VIEW REQUESTS FROM DOCTORS");
-        add(btnViewReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 535, -1, 38));
+        add(btnViewReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 520, -1, 38));
 
         lblDocTbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDocTbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDocTbl.setText("View Requests from Doctor:");
-        add(lblDocTbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 654, 1069, 35));
+        add(lblDocTbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(-350, 150, 1069, 35));
 
         tblDoc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -240,7 +240,7 @@ public class WorkAreaPanel_Pharmacy extends javax.swing.JPanel {
         ));
         scrollPane2.setViewportView(tblDoc);
 
-        add(scrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 698, 825, 241));
+        add(scrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 825, 80));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatusActionPerformed
