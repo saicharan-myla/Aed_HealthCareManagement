@@ -42,6 +42,7 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
         btnOrgMng = new javax.swing.JButton();
         btnMngEmp = new javax.swing.JButton();
         BtnMngUsr = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -78,6 +79,9 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manage.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,7 +92,9 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 1027, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(415, 415, 415)
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(159, 159, 159)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnOrgMng, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMngEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -108,12 +114,17 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblEnt)
                     .addComponent(lblVal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(btnOrgMng)
-                .addGap(53, 53, 53)
-                .addComponent(btnMngEmp)
-                .addGap(55, 55, 55)
-                .addComponent(BtnMngUsr)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(btnOrgMng)
+                        .addGap(53, 53, 53)
+                        .addComponent(btnMngEmp)
+                        .addGap(55, 55, 55)
+                        .addComponent(BtnMngUsr))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(158, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -146,6 +157,7 @@ public class WorkAreaPanel_Admin extends javax.swing.JPanel {
     private javax.swing.JButton BtnMngUsr;
     private javax.swing.JButton btnMngEmp;
     private javax.swing.JButton btnOrgMng;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEnt;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JLabel lblVal;

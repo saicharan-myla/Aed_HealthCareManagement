@@ -146,6 +146,7 @@ this.panel = p ;
 
         btnCreate.setBackground(new java.awt.Color(153, 153, 153));
         btnCreate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/add.png"))); // NOI18N
         btnCreate.setText("Create Employee");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +199,7 @@ this.panel = p ;
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                    .addComponent(txtName))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBack)
@@ -208,7 +209,7 @@ this.panel = p ;
                 .addGroup(layout.createSequentialGroup()
                     .addGap(37, 37, 37)
                     .addComponent(lblHeader)
-                    .addContainerGap(595, Short.MAX_VALUE)))
+                    .addContainerGap(666, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
